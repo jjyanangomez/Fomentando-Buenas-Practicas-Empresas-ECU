@@ -119,11 +119,11 @@ https://templatemo.com/tm-516-known
 
   .entry-form {
     background: #252020;
-    border-radius: 100%;
+    border-radius: 150%;
     text-align: center;
-    padding: 6em;
-    width: 450px;
-    height: 450px;
+    padding: 3em;
+    width: 500px;
+    height: 500px;
   }
 
   .entry-form h2 {
@@ -465,6 +465,7 @@ https://templatemo.com/tm-516-known
     position: relative;
     overflow: hidden;
     text-align: left;
+    padding: 0px 50px;
   }
 
   .team-info {
@@ -473,6 +474,8 @@ https://templatemo.com/tm-516-known
 
   .team-image img {
     width: 100%;
+    width: 280px;
+    height: 250px;
   }
 
   .team-thumb .social-icon {
