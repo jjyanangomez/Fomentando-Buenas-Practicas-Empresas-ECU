@@ -382,16 +382,16 @@ https://templatemo.com/tm-516-known
   .caption h3 a:hover { color: #FF3; }
 
   .home-slider .item-first {
-    background-image: url(../images/slider-image1.jpg);
+    background-image: url(../images/ImagenPrincipal.png);
 	background-position: center;
   }
 
   .home-slider .item-second {
-    background-image: url(../images/slider-image2.jpg);
+    background-image: url(../images/ImagenPrincipal2.png);
   }
 
   .home-slider .item-third {
-    background-image: url(../images/slider-image3.jpg);
+    background-image: url(../images/ImagenPrincipal3.jpg);
   }
 
 
