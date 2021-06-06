@@ -770,7 +770,26 @@ https://templatemo.com/tm-516-known
   footer .social-icon {
     margin-top: 25px;
   }
-
+  /*
+  estilo para el logo de la U
+  */
+  .footer-LogoUTPL{
+    display:block;
+    float: right;
+    margin-right: -280px;
+    margin-top: -280px;
+  }
+  /*
+  ****************
+  estilo para el logo de la página 
+  */
+  .logo{
+    float: left;
+    margin-top: 10px;
+  }
+  /*
+  ****************
+  */
   .footer-info {
     margin-right: 2em;
   }
