@@ -270,7 +270,7 @@ https://templatemo.com/tm-516-known
 
   .custom-navbar .navbar-brand {
     color: #309D7B;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 40px;
   }
@@ -776,8 +776,8 @@ https://templatemo.com/tm-516-known
   .footer-LogoUTPL{
     display:block;
     float: right;
-    margin-right: -268px;
-    margin-top: -210px;
+    margin-right: -287px;
+    margin-top: -183px;
   }
   /*
   ****************
@@ -786,6 +786,7 @@ https://templatemo.com/tm-516-known
   .logo{
     float: left;
     margin-top: 10px;
+    margin-left: -60px;
   }
   /*
   ****************
@@ -934,7 +935,12 @@ https://templatemo.com/tm-516-known
     h1,h2,h3 {
       line-height: normal;
     }
-
+    /*responsibo en 767 px*/
+    .logo{
+      float: left;
+      margin-top: -4px;
+      margin-left: 9px;
+    }
     .custom-navbar {
       background: #ffffff;
       -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
@@ -947,6 +953,7 @@ https://templatemo.com/tm-516-known
     .custom-navbar .navbar-brand,
     .custom-navbar .nav li a {
       line-height: normal;
+      margin-left: -10px;
     }
 
     .custom-navbar .nav li a {
@@ -955,7 +962,7 @@ https://templatemo.com/tm-516-known
 
     .custom-navbar .navbar-brand,
     .top-nav-collapse .navbar-brand {
-      color: #252525;
+      color: #309D7B;
       font-weight: 600;
     }
 
