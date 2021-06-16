@@ -184,23 +184,175 @@ https://templatemo.com/tm-516-known
                                  </div>
                              </div>
                          </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="">
+                             <div class="div-table" style="margin:0 !important;">
+                                 <div class="div-table-row div-table-row-list">
+                                     <div class="div-table-cell" style="width: 6%;">1</div>    
+                                     <div class="div-table-cell" style="width: 22%;">Nombre de video</div>
+                                     <div class="div-table-cell" style="width: 10%;">link--------------------</div>
+                                     <div class="div-table-cell" style="width: 10%;">Esto es un video</div>
+                                     <div class="div-table-cell" style="width: 10%;">09/06/2021</div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-success"><i class="zmdi zmdi-timer"></i></button>
+                                     </div>
+                                     <div class="div-table-cell" style="width: 8%;">
+                                         <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
                      </div>
                     <div class="col-md-offset-1 col-md-4 col-sm-12">
                          
-                              <form action="#" method="post"></form>
+                         <form action="./dll/metodos.php" method="POST">
                               <h3 class="section-title">Agregar video</h3>
-                                   <input type="text" name="titulo" class="form-control" placeholder="Ingrese el titulo del video" required="">
-                                   <div class="div-table-cell" style="width: 4%;"></div>
-                                   <input type="text" name="Url" class="form-control" placeholder="Ingrese la URL del video" required="">
-                                   <div class="div-table-cell" style="width: 4%;"></div>
-                                   <input type="text" name="Descripción" class="form-control" placeholder="Descripción" required="">
-                                   <div class="div-table-cell" style="width: 4%;"></div>
-                                   <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de creación del video" required="">
-                                   <div class="div-table-cell" style="width: 4%;"></div>
-                                   <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" >Agregar</button>
-
-                              </form>
-                         
+                              <input type="text" name="titulo" class="form-control" placeholder="Ingrese el titulo del video" required="">
+                              <div class="div-table-cell" style="width: 4%;"></div>
+                              <input type="text" name="Url" class="form-control" placeholder="Ingrese la URL del video" required="">
+                              <div class="div-table-cell" style="width: 4%;"></div>
+                              <input type="text" name="Descripcion" class="form-control" placeholder="Descripción" required="">
+                              <div class="div-table-cell" style="width: 4%;"></div>
+                              <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de creación del video" required="">
+                              <div class="div-table-cell" style="width: 4%;"></div>
+                              <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" name="Agregar">Agregar</button>
+                              <!--<input type="submit" class="submit-btn form-control" style= background-color:#9dc15b value="Agregar" name="Agregar">-->
+                         </form>
                     </div>
                    
                     

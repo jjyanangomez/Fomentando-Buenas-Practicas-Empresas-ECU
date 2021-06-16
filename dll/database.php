@@ -74,6 +74,14 @@
         $res = mysqli_query($this->con,$sql);
         return $res;
     }
+    public function InsertConsulta($sql){
+        $res = mysqli_query($this->con,$sql);
+        if($res){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 
