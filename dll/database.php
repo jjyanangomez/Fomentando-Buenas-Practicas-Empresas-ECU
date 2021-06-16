@@ -1,10 +1,15 @@
 <?php 
     class Database {
-        private $con;
+        /*private $con;
         private $dbhost = '127.0.0.1';
         private $dbuser = 'root';
         private $dbpass = '';
-        private $dbname = 'fomentando-b-p-e-e';
+        private $dbname = 'fomentando-b-p-e-e';*/
+        private $con;
+        private $dbhost = 'mysql-juanyasa.alwaysdata.net';
+        private $dbuser = 'juanyasa';
+        private $dbpass = 'dragonperla4';
+        private $dbname = 'juanyasa_fomentando-b-p-e-e';
     
 
     function __construct(){
