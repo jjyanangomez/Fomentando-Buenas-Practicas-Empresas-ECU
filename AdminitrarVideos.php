@@ -122,25 +122,6 @@ https://templatemo.com/tm-516-known
                         </tbody>
                     </table>
                 </div>
-<<<<<<< HEAD
-                <!--IngresarVideo-->
-                <div class="col-md-offset-1 col-md-4 col-sm-12">
-                    <form action="./dll/metodos.php" method="POST">
-                        <h3 class="section-title">Agregar video</h3>
-                        <input type="text" name="titulo" class="form-control" placeholder="Ingrese el titulo del video" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Url" class="form-control" placeholder="Ingrese la URL del video" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Descripcion" class="form-control" placeholder="Descripción" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de creación del video" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" name="Agregar">Agregar</button>
-                        <!--<input type="submit" class="submit-btn form-control" style= background-color:#9dc15b value="Agregar" name="Agregar">-->
-                    </form>
-                </div>
-
-=======
                 <?php
                     if(isset($_GET["id_Video"]) && isset($_GET["Editar"])){
                         $id_AV = $_GET["id_Video"];
@@ -181,7 +162,6 @@ https://templatemo.com/tm-516-known
                     </div>";
                     }
                 ?>
->>>>>>> 5aa27f024355290412e484506ea77402d3a48782
             </div>
         </div>
      </section>
