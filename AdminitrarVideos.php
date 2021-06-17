@@ -114,13 +114,15 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 15%;"><?php echo $Url?></td>
                                         <td class="col" style="width: 22%;"><?php echo $Descripcion?></td>
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="dll/metodos.php?id_Video=<?php echo $Id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Video=<?php echo $Id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="AdminitrarVideos.php?id_Video=<?php echo $Id?>&Editar#llenar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
+                                        <!--<td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Video=<?php echo $Id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>-->
+                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $Id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
                                     </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
+<<<<<<< HEAD
                 <!--IngresarVideo-->
                 <div class="col-md-offset-1 col-md-4 col-sm-12">
                     <form action="./dll/metodos.php" method="POST">
@@ -138,15 +140,53 @@ https://templatemo.com/tm-516-known
                     </form>
                 </div>
 
+=======
+                <?php
+                    if(isset($_GET["id_Video"]) && isset($_GET["Editar"])){
+                        $id_AV = $_GET["id_Video"];
+                        $consulta = $conexion->readOne("recursos_audiovisuales",$id_AV);
+                        $row = mysqli_fetch_object($consulta);
+                        $Nombre_AV=$row->Nombre;
+                        $Url_AV=$row->URL;
+                        $Descripcion_AV=$row->Descripcion;
+                        $Fecha_AV=$row->Fecha_Creacion;
+                        echo "<div id='llenar'  class='col-md-offset-1 col-md-4 col-sm-12'>
+                            <form action='./dll/metodos.php?id=$id_AV' method='POST'>
+                            <h3  class='section-title'>Actualizar video $id_AV</h3>
+                            <input type='text' name='titulo' class='form-control' placeholder='Ingrese el titulo del video' required='' value ='$Nombre_AV'>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='text' name='Url' class='form-control' placeholder='Ingrese la URL del video' required='' value ='$Url_AV'>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='text' name='Descripcion' class='form-control' placeholder='Descripción' required='' value ='$Descripcion_AV'>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de creación del video' required='' value ='$Fecha_AV'>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='Actualizar' name='Actualizar'>
+                        </form>
+                    </div>";
+                    }else{
+                        echo "<div class='col-md-offset-1 col-md-4 col-sm-12'>
+                            <form action='./dll/metodos.php' method='POST'>
+                            <h3 class='section-title'>Agregar video</h3>
+                            <input type='text' name='titulo' class='form-control' placeholder='Ingrese el titulo del video' required=''>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='text' name='Url' class='form-control' placeholder='Ingrese la URL del video' required=''>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='text' name='Descripcion' class='form-control' placeholder='Descripción' required=''>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de creación del video' required=''>
+                            <div class='div-table-cell' style='width: 4%;'></div>
+                            <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='Agregar' name='Agregar'>
+                        </form>
+                    </div>";
+                    }
+                ?>
+>>>>>>> 5aa27f024355290412e484506ea77402d3a48782
             </div>
         </div>
      </section>
-     <section id="Completar">
-               <div class="row">
-                    
-               </div>
 
-     </section>
+
       
      <!-- FOOTER -->
      <footer id="footer">
@@ -223,6 +263,16 @@ https://templatemo.com/tm-516-known
                     $("#Fecha").datepicker();  
                });  
           });  
+     </script>
+     <script type="text/javascript">
+        function preguntar(id){
+            if(confirm("Esta seguro que desea Eliminar este Campo: ")){
+                window.location.href = "dll/metodos.php?id_Video="+id+"&Eliminar";
+            }
+
+        }
+
+        ;  
      </script>
 
 </body>

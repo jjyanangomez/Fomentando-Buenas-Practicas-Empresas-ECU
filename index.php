@@ -357,7 +357,7 @@ https://templatemo.com/tm-516-known
                                    <img src="images/gifvideos1.gif" class="img-responsive" alt="" style="width: 344.5px; height:  251.5px">
                               </div>
                               <div class="team-info">
-                                   <h3>Videos</h3>
+                                   <h3><a href="GaleriaVideos.php">Videos</a></h3>
                                    <span>Descripción Videos:</span>
                               </div>
                               
