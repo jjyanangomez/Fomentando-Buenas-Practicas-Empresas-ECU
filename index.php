@@ -106,7 +106,7 @@ https://templatemo.com/tm-516-known
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-6 col-sm-12">
-                                             <h1>Puedes encontrar trabajos realizados por los estudiantes de la carrera de sostenibilidad</h1>
+                                             <h1>Puedes encontrar trabajos realizados por los estudiantes de la carrera de administración de empresas</h1>
                                              <h3>Recursos: Videos, Infografías o Documentos</h3>
                                              <a href="#courses" class="section-btn btn btn-default smoothScroll">Archivos Relacionados</a>
                                         </div>

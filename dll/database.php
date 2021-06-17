@@ -29,26 +29,8 @@
         return $return; 
     }
 
-    /*Consulta para insertar */
-    public function create ($nombres, $apellidos, $telefono, $direccion, $correo){
-        $sql = "INSERT INTO clientes (nombres, apellidos, telefono, direccion, correo_electronico) VALUES ('$nombres','$apellidos','$telefono','$direccion','$correo')";
-        $res = mysqli_query($this ->con, $sql);
-        if($res){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /*Leer Datos*/
-    public function read(){
-        $sql="SELECT * FROM clientes";
-        $res=mysqli_query($this->con,$sql);
-        return $res;
-    } 
     /*Borrar */
-    public function delete($id){
-        $sql="DELETE FROM clientes WHERE id=$id";
+    public function deleteConsulta($sql){
         $res=mysqli_query($this->con,$sql);
         if($res){
             return true;
@@ -57,10 +39,7 @@
         }
     }
     /*Actualizar datos */
-    public function update($id,$nombres, $apellidos, $telefono, $direccion, $correo){
-        $sql="UPDATE clientes SET nombres='$nombres',
-        apellidos='$apellidos',telefono='$telefono',
-        direccion='$direccion',correo_electronico='$correo' WHERE id=$id" ;
+    public function updateConsulta($sql){
         $res=mysqli_query($this->con,$sql);
         if($res){
             return true;
@@ -69,8 +48,8 @@
         }
     }
     //Obtener un dato
-    public function readOne($id){
-        $sql="SELECT * FROM clientes WHERE id=$id";
+    public function readOne($tabla,$id){
+        $sql="SELECT * FROM $tabla WHERE id=$id";
         $res=mysqli_query($this->con,$sql);
         return $res;
     }
