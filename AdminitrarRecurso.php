@@ -1,12 +1,14 @@
 <?php 
      include("dll/database.php");
      $conexion = new Database();
+     $conexion2 = new Database();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-     <title>ADMIN VIDEOS</title>
+     <title>ADMIN RECURSOS</title>
 <!-- 
 
 Known Template 
@@ -81,19 +83,23 @@ https://templatemo.com/tm-516-known
 
           </div>
      </section>
+
+
+
+
      <!--FormularioVideo-->
      <section id="team">
         <div class="container">
             <div class="row">
-                <h2 class="section-title">Administración de Videos</h2>
+                <h2 class="section-title">Administración de Recursos</h2>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead class="thead-dark" style=" margin:0 !important; background-color:#9dc15b; font-weight:bold;">
                             <tr style="margin:0 !important; font-weight:bold;">
                                 <th class="col" style="width: 3%;">ID</th>
-                                <th class="col" style="width: 15%;">Título</th>
-                                <th class="col" style="width: 15%;">Link del Video</th>
-                                <th class="col" style="width: 20%;">Descripción</th>
+                                <th class="col" style="width: 15%;">Nombre del Recurso</th>
+                                <th class="col" style="width: 15%;">Tipo</th>
+                                <th class="col" style="width: 20%;">Archivo</th>
                                 <th class="col" style="width: 10%;">Fecha de publicación</th>
                                 <th class="col" style="width: 8%;">Editar</th>
                                 <th class="col" style="width: 8%;">Eliminar</th>
@@ -101,37 +107,40 @@ https://templatemo.com/tm-516-known
                         </thead>
                         <tbody >
                             <?php 
-                                $Videos = $conexion->readConsulta("SELECT * FROM recursos_audiovisuales");
-                                while($row=mysqli_fetch_object($Videos)){
-                                    $Id=$row->IDrecurso_Audio;
-                                    $Nombre=$row->Nombre;
-                                    $Url=$row->URL;
-                                    $Descripcion=$row->Descripcion;
+                         
+                                $Recursos = $conexion2->readConsulta("SELECT * FROM recursos_digitales");
+                        
+                                while($row=mysqli_fetch_object($Recursos)){                                  
+                                    $ID=$row->IdRecurso_Digital;                       
+                                    $Nombre=$row->Nombre;                              
+                                    $Tipo=$row->Tipo;                               
+                                    $Archivo=$row->Archivo;                              
                                     $Fecha=$row->Fecha_Creacion;?>
+
                                     <tr class="table" style="margin:0 !important; font-weight:bold;">
-                                        <td class="col" style="width: 3%;"><?php echo $Id?></td>
+                                        <td class="col" style="width: 3%;"><?php echo $ID?></td>
                                         <td class="col" style="width: 15%;"><?php echo $Nombre?></td>
-                                        <td class="col" style="width: 15%;"><?php echo $Url?></td>
-                                        <td class="col" style="width: 22%;"><?php echo $Descripcion?></td>
+                                        <td class="col" style="width: 15%;"><?php echo $Tipo?></td>
+                                        <td class="col" style="width: 22%;"><?php echo $Archivo?></td>
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="dll/metodos.php?id_Video=<?php echo $Id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Video=<?php echo $Id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="dll/metodos.php?id_Recurso=<?php echo $ID?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Recurso=<?php echo $ID?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
                                     </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
-                <!--IngresarVideo-->
+                <!--IngresarRecurso-->
                 <div class="col-md-offset-1 col-md-4 col-sm-12">
                     <form action="./dll/metodos.php" method="POST">
-                        <h3 class="section-title">Agregar video</h3>
-                        <input type="text" name="titulo" class="form-control" placeholder="Ingrese el titulo del video" required="">
+                        <h3 class="section-title">Agregar Recurso</h3>
+                        <input type="text" name="Nombre" class="form-control" placeholder="Ingrese el nombre del recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Url" class="form-control" placeholder="Ingrese la URL del video" required="">
+                        <input type="text" name="Tipo" class="form-control" placeholder="Ingrese tipo recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Descripcion" class="form-control" placeholder="Descripción" required="">
+                        <input type="text" name="Archivo" class="form-control" placeholder="Ingrese el Archivo" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de creación del video" required="">
+                        <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de creación del recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" name="Agregar">Agregar</button>
                         <!--<input type="submit" class="submit-btn form-control" style= background-color:#9dc15b value="Agregar" name="Agregar">-->
@@ -147,7 +156,13 @@ https://templatemo.com/tm-516-known
                </div>
 
      </section>
-      
+
+
+
+
+
+
+
      <!-- FOOTER -->
      <footer id="footer">
           <div class="container">
