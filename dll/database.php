@@ -49,7 +49,7 @@
     }
     //Obtener un dato
     public function readOne($tabla,$id){
-        $sql="SELECT * FROM $tabla WHERE id=$id";
+        $sql="SELECT * FROM $tabla WHERE IDrecurso_Audio=$id";
         $res=mysqli_query($this->con,$sql);
         return $res;
     }
