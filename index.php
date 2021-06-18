@@ -474,21 +474,21 @@ https://templatemo.com/tm-516-known
                <div class="row">
 
                     <div class="col-md-6 col-sm-12">
-                         <form id="contact-form" role="form" action="" method="post">
+                         <form id="contact-form" role="form" action="./dll/Correo.php" method="post">
                               <div class="section-title">
                                    <h2>Contactos<small>Si tiene una consulta o sugerencia la puede deja en este apartado</small></h2>
                               </div>
 
                               <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Ingrese su nombre" name="name" required="">
+                                   <input type="text" class="form-control" placeholder="Ingrese su nombre" name="nombre" required="">
                     
-                                   <input type="email" class="form-control" placeholder="Ingrese su correo" name="email" required="">
+                                   <input type="email" class="form-control" placeholder="Ingrese su correo" name="correo" required="">
 
-                                   <textarea class="form-control" rows="6" placeholder="Dejanos tu mensaje" name="message" required=""></textarea>
+                                   <textarea class="form-control" rows="6" placeholder="Dejanos tu mensaje" name="mensaje" required=""></textarea>
                               </div>
 
                               <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control" name="send message" value="Enviar Mensaje">
+                                   <input type="submit" class="form-control" name="Mensaje" value="Enviar Mensaje">
                               </div>
 
                          </form>
