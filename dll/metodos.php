@@ -87,8 +87,30 @@ if(isset($_POST["Agregar"])){
 	$Titulo = $_POST["Titulo"];
 	$Categoria = $_POST["Categoria"];
 	$Extencion = $_POST["Extencion"];
+	
+	$file_name = $_FILES['file']['name'];
+
+    $new_name_file = null;
+
+	if ($file_name != '' || $file_name != null) {
+        $file_type = $_FILES['file']['type'];
+        list($type, $extension) = explode('/', $file_type);
+        if ($extension == 'pdf') {
+            $dir = 'files/';
+            if (!file_exists($dir)) {
+                mkdir($dir, 0777, true);
+            }
+            $file_tmp_name = $_FILES['file']['tmp_name'];
+            //$new_name_file = 'files/' . date('Ymdhis') . '.' . $extension;
+            $new_name_file = $dir . file_name($file_name) . '.' . $extension;
+            if (copy($file_tmp_name, $new_name_file)) {
+                
+            }
+        }
+    }
 	$Fecha = $_POST["Fecha"];
-	$envio2 = "INSERT INTO `recursos_infografia`(`Titulo`, `Categoria`, `Extencion`, `Fecha_publicacion`) VALUES ('$Titulo','$Categoria','$Extencion','$Fecha')";
+
+	$envio2 = "INSERT INTO `recursos_infografia`(`Titulo`, `Categoria`, `Extencion`,`url`, `Fecha_publicacion`) VALUES ('$Titulo','$Categoria','$Extencion','$file_name','$Fecha')";
 	$resultado2 = $conexion3->InsertConsulta($envio2);
 	if(!$resultado2){
 

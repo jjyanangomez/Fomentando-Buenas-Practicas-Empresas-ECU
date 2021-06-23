@@ -2,6 +2,8 @@
      include("dll/database.php");
      $conexion = new Database();
      $conexion3 = new Database();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +30,7 @@ https://templatemo.com/tm-516-known
      <link rel="stylesheet" href="css/owl.theme.default.min.css">
      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
      <link rel="stylesheet" href="css/styles.css">
+    
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
@@ -96,10 +99,12 @@ https://templatemo.com/tm-516-known
                                 <th class="col" style="width: 3%;">ID</th>
                                 <th class="col" style="width: 15%;">Titulo</th>
                                 <th class="col" style="width: 15%;">Categoria</th>
-                                <th class="col" style="width: 20%;">Tipo</th>
+                                <th class="col" style="width: 10%;">Tipo</th>
+                                <th class="col" style="width: 15%;">URL</th>
                                 <th class="col" style="width: 10%;">Fecha de publicación</th>
-                                <th class="col" style="width: 8%;">Editar</th>
-                                <th class="col" style="width: 8%;">Eliminar</th>
+                                <th class="col" style="width: 7%;">Editar</th>
+                                <th class="col" style="width: 7%;">Eliminar</th>
+                                <th class="col" style="width: 7%;">Ver Archivo</th>
                             </tr>
                         </thead>
                         <tbody >
@@ -111,17 +116,21 @@ https://templatemo.com/tm-516-known
                                     $id=$row->id_recurso_infografia;                                                   
                                     $Titulo=$row->Titulo;     
                                     $Categoria=$row->Categoria;                                  
-                                    $Extencion=$row->Extencion;                                                                                           
+                                    $Extencion=$row->Extencion; 
+                                    $Url=$row->url; 
                                     $Fecha=$row->Fecha_publicacion;?>
 
                                     <tr class="table" style="margin:0 !important; font-weight:bold;">
                                         <td class="col" style="width: 3%;"><?php echo $id?></td>
                                         <td class="col" style="width: 15%;"><?php echo $Titulo?></td>
                                         <td class="col" style="width: 15%;"><?php echo $Categoria?></td>
-                                        <td class="col" style="width: 22%;"><?php echo $Extencion?></td>
+                                        <td class="col" style="width: 10%;"><?php echo $Extencion?></td> 
+                                        <td class="col" style="width: 15%;"><?php echo $Url?></td>
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-success" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-danger" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-primary" target = "_black" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '../' . $val['url']; ?>" >Ver</a></td>
+                                       
                                     </tr>
                             <?php } ?>
                         </tbody>
@@ -137,12 +146,39 @@ https://templatemo.com/tm-516-known
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" name="Extencion" class="form-control" placeholder="Ingrese el Extencion" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
+       
+                        <div class="form-group">
+                                <button class="submit-btn form-control" style= background-color:#87cbf5 id="form-submit" name="Subir Archivo">Subir Archivo</button>
+                                <input type="file" name="file" class="form-control" id="file" >
+                            </div>
+                        <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de publicación" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" name="Agregar">Agregar</button>
                         <!--<input type="submit" class="submit-btn form-control" style= background-color:#9dc15b value="Agregar" name="Agregar">-->
                     </form>
                 </div>
+                <!--Modal-->
+                <div class="modal fade" id="modalPdf" tabindex="-1" aria-labelledby="modalPdf" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ver archivo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="iframePDF" frameborder="0" scrolling="no" width="100%" height="500px"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!--FinModal-->
 
             </div>
         </div>
@@ -219,6 +255,10 @@ https://templatemo.com/tm-516-known
      <script src="js/custom.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
      <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+     
+     
      <script>  
           $(document).ready(function(){  
                $.datepicker.setDefaults({  
@@ -228,6 +268,37 @@ https://templatemo.com/tm-516-known
                     $("#Fecha").datepicker();  
                });  
           });  
+     </script>
+       
+     <script>
+
+          function onSubmitForm() {
+               var frm = document.getElementById('form1');
+               var data = new FormData(frm);
+               var xhttp = new XMLHttpRequest();
+               xhttp.onreadystatechange = function () {
+               if (this.readyState == 4) {
+               var msg = xhttp.responseText;
+               if (msg == 'success') {
+                    alert(msg);
+                    $('#exampleModal').modal('hide')
+                   
+                    } else {
+
+                         alert(msg);
+                                        }
+
+                          }
+                };
+                    xhttp.open("POST", "metodos.php", true);
+                    xhttp.send(data);
+                    $('#form1').trigger('reset');
+          }
+               function openModelPDF(url) {
+                    $('#modalPdf').modal('show');
+                    $('#iframePDF').attr('src','<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/ProyectoINGWEB/Fomentando-Buenas-Practicas-Empresas-ECU/'; ?>'+url);
+                    
+               }
      </script>
 
 </body>
