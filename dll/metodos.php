@@ -92,22 +92,24 @@ if(isset($_POST["Agregar"])){
 
     $new_name_file = null;
 
-	if ($file_name != '' || $file_name != null) {
+
+	/*if ($file_name != '' || $file_name != null) {
         $file_type = $_FILES['file']['type'];
-        list($type, $extension) = explode('/', $file_type);
-        if ($extension == 'pdf') {
+        list($type, $extencion) = explode('/', $file_type);
+        if ($extencion == 'pdf') {
+		    echo "Entro";
             $dir = 'files/';
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
             $file_tmp_name = $_FILES['file']['tmp_name'];
             //$new_name_file = 'files/' . date('Ymdhis') . '.' . $extension;
-            $new_name_file = $dir . file_name($file_name) . '.' . $extension;
+            $new_name_file = $dir . $file_name . '.' . $extencion;
             if (copy($file_tmp_name, $new_name_file)) {
                 
             }
         }
-    }
+    }*/
 	$Fecha = $_POST["Fecha"];
 
 	$envio2 = "INSERT INTO `recursos_infografia`(`Titulo`, `Categoria`, `Extencion`,`url`, `Fecha_publicacion`) VALUES ('$Titulo','$Categoria','$Extencion','$file_name','$Fecha')";
