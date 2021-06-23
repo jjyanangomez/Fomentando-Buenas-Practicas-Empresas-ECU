@@ -4,7 +4,8 @@
 	$conexion2 = new Database();
 	$conexion3 = new Database();
 
-    if(isset($_POST["Agregar"])){
+	/* Videos */
+    if(isset($_POST["AgregarVideo"])){
 		$titulo = $_POST["titulo"];
 		$url = $_POST["Url"];
 		$Descripcion = $_POST["Descripcion"];
@@ -18,7 +19,7 @@
 		}
 		header("Location: ../AdminitrarVideos.php");
 	}
-	if(isset($_GET["id_Video"]) && isset($_GET["Eliminar"])){
+	if(isset($_GET["id_Video"]) && isset($_GET["EliminarVideo"])){
 		$id= $_GET["id_Video"];
 		$envio = "DELETE FROM `recursos_audiovisuales` WHERE IDrecurso_Audio= $id";
 		$resultado = $conexion->deleteConsulta($envio);;
@@ -29,7 +30,7 @@
 		}
 		header("Location: ../AdminitrarVideos.php");
 	}
-	if(isset($_POST["Actualizar"])){
+	if(isset($_POST["ActualizarVideo"])){
 		$id = $_GET["id"];
 		$titulo = $_POST["titulo"];
 		$url = $_POST["Url"];

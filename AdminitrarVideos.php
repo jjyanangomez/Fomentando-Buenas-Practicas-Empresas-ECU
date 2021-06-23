@@ -142,7 +142,7 @@ https://templatemo.com/tm-516-known
                             <div class='div-table-cell' style='width: 4%;'></div>
                             <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de creación del video' required='' value ='$Fecha_AV'>
                             <div class='div-table-cell' style='width: 4%;'></div>
-                            <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='Actualizar' name='Actualizar'>
+                            <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='ActualizarVideo' name='ActualizarVideo'>
                         </form>
                     </div>";
                     }else{
@@ -157,7 +157,7 @@ https://templatemo.com/tm-516-known
                             <div class='div-table-cell' style='width: 4%;'></div>
                             <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de creación del video' required=''>
                             <div class='div-table-cell' style='width: 4%;'></div>
-                            <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='Agregar' name='Agregar'>
+                            <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='AgregarVideo' name='AgregarVideo'>
                         </form>
                     </div>";
                     }
@@ -249,7 +249,7 @@ https://templatemo.com/tm-516-known
      <script type="text/javascript">
         function preguntar(id){
             if(confirm("Esta seguro que desea Eliminar este Campo: ")){
-                window.location.href = "dll/metodos.php?id_Video="+id+"&Eliminar";
+                window.location.href = "dll/metodos.php?id_Video="+id+"&EliminarVideo";
             }
 
         }
