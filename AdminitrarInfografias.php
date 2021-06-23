@@ -236,12 +236,14 @@ https://templatemo.com/tm-516-known
                                         <li><a href="#">Refund Policy</a></li>
                                    </ul>
                               </div>
-                              <div class = "footer-LogoUTPL">
-                                   <img src="./images/UTPL1.png" alt="" style="width: 274.5px; height:  106.5px">
-                              </div>
                          </div>
                     </div>
-                    
+                    <div class="col-md-4 col-sm-6">
+                         <div class = "footer_img">
+                              <img src="./images/UTPL1.png" alt="" style="width: 274.5px; height:  106.5px">
+                         </div>
+                    </div>
+
                </div>
           </div>
      </footer>
