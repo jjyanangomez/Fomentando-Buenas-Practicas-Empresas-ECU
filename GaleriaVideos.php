@@ -103,7 +103,7 @@ https://templatemo.com/tm-516-known
                               $porciones = explode("=", $Url);
                               $corte = explode("?", $porciones[1]);
                               $Fecha=$row->Fecha_Creacion;?>
-                              <div class="col-md-3">
+                              <div class="col-md-3 col-sm-6">
                                    <div class="team-thumb">
                                         <div class="team-image">
                                              <iframe src="https://www.youtube.com/embed/<?php echo $corte[0]?>?enablejsapi=1&feature=oembed&wmode=opaque&vq=hd720&&&" frameborder="0" allowfullscreen allow="autoplay" id="widget2" style="width: 344.5px; height:  251.5px"></iframe>

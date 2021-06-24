@@ -140,6 +140,7 @@ https://templatemo.com/tm-516-known
                                 <th class="col" style="width: 10%;">Fecha de publicación</th>
                                 <th class="col" style="width: 8%;">Editar</th>
                                 <th class="col" style="width: 8%;">Eliminar</th>
+                                <th class="col" style="width: 7%;">Ver Archivo</th>
                             </tr>
                         </thead>
                         <tbody >
@@ -160,6 +161,7 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 8%;"><a class="btn btn-success" href="AdminitrarVideos.php?id_Video=<?php echo $Id?>&Editar#llenar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
                                         <!--<td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Video=<?php echo $Id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>-->
                                         <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $Id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="submit-btn form-control" style= background-color:#cfd4d7 target = "_black" href="<?php echo  $Url; ?>" >Ver</a></td>
                                     </tr>
                             <?php } ?>
                         </tbody>

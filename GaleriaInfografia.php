@@ -68,12 +68,12 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="index.html #top" class="smoothScroll">Inicio</a></li>
-                         <li><a href="index.html #courses" class="smoothScroll">Información General</a></li>
-                         <li><a href="index.html #team" class="smoothScroll">Archivos Relacionados</a></li>
-                         <li><a href="index.html #about" class="smoothScroll">Autodiagnóstico</a></li>
+                         <li><a href="index.php#top" class="smoothScroll">Inicio</a></li>
+                         <li><a href="index.php#courses" class="smoothScroll">Información General</a></li>
+                         <li><a href="index.php#team" class="smoothScroll">Archivos Relacionados</a></li>
+                         <li><a href="index.php#about" class="smoothScroll">Autodiagnóstico</a></li>
                        <!--  <li><a href="#testimonial" class="smoothScroll">Reviews</a></li> -->
-                         <li><a href="index.html #contact" class="smoothScroll">Contactos</a></li>
+                         <li><a href="index.php#contact" class="smoothScroll">Contactos</a></li>
                     </ul>
                    
                     

@@ -358,7 +358,7 @@ https://templatemo.com/tm-516-known
                               </div>
                               <div class="team-info">
                                    <h3><a href="GaleriaVideos.php">Videos</a></h3>
-                                   <span>Descripción Videos: Podra visualizar videos referentes a responsabilidad Social</span>
+                                   <span>Podra visualizar videos referentes a responsabilidad Social</span>
                               </div>
                               
                          </div>
@@ -371,7 +371,7 @@ https://templatemo.com/tm-516-known
                               </div>
                               <div class="team-info">
                                    <h3><a href="GaleriaInfografia.php">Infografías</a></h3>
-                                   <span>Descripción Infografias: Podra visualizar infografias referentes a responsabilidad Social</span>
+                                   <span>Podra visualizar infografias referentes a responsabilidad Social</span>
                               </div>
                              
                          </div>
@@ -383,8 +383,8 @@ https://templatemo.com/tm-516-known
                                    <img src="images/informes1.gif" class="img-responsive" alt=""style="width: 274.5px; height:  262.5px" >
                               </div>
                               <div class="team-info">
-                                   <h3><a href="GaleriaRecursos.html">Recursos</a></h3>
-                                   <span>Descripción Recursos: Podra visualizar archivos referentes a responsabilidad Social</span>
+                                   <h3><a href="GaleriaRecursos.php">Recursos</a></h3>
+                                   <span>Podra visualizar archivos referentes a responsabilidad Social</span>
                               </div>
                              
                          </div>
