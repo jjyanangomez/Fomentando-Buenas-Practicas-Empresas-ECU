@@ -120,7 +120,8 @@ https://templatemo.com/tm-516-known
                                     $Categoria=$row->Categoria;                                  
                                     $Extencion=$row->Extencion; 
                                     $Url=$row->url; 
-                                    $Fecha=$row->Fecha_publicacion;?>
+                                    $Fecha=$row->Fecha_publicacion;
+                                    $direc = "../Fomentando-Buenas-Practicas-Empresas-ECU/". $Url; ?>
 
                                     <tr class="table" style="margin:0 !important; font-weight:bold;">
                                         <td class="col" style="width: 3%;"><?php echo $id?></td>
@@ -131,7 +132,7 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-success" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-danger" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 7%;"><a class="btn btn-primary" target = "_black" href="<?php $direc = "../"; echo 'http://' . $_SERVER['HTTP_HOST'] . $Url; ?>" >Ver</a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-primary" target = "_black" href="./<?php echo  $Url; ?>" >Ver</a></td>
                                        
                                     </tr>
                             <?php } ?>

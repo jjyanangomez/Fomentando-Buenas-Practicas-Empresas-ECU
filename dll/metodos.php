@@ -95,13 +95,13 @@ if(isset($_POST["AgregarInfografia"] )){
 	//$file_name = $_POST['files'];
 	//$nombre = $_FILES['files']['name']; 
     $archivo = $_FILES['files']['tmp_name']; 
-    $dir = '../files/';
+    $dir = 'files/';
 	if (!file_exists($dir)) {
 		mkdir($dir, 0777, true);
 	}
 	$new_name_file = $dir . $file_name;
 
-	move_uploaded_file($archivo, $new_name_file);
+	move_uploaded_file($archivo,"../". $new_name_file);
 	
     
 
