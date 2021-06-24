@@ -138,7 +138,7 @@ https://templatemo.com/tm-516-known
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" name="Tipo" class="form-control" placeholder="Ingrese tipo recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Archivo" class="form-control" placeholder="Ingrese el Archivo" required="">
+                        <input type="file" />
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de creación del recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
