@@ -70,12 +70,12 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#courses" class="smoothScroll">Inicio</a></li>
+                         <li><a href="./Administrador.html" class="smoothScroll">Inicio</a></li>
                          <li><a href="#team" class="smoothScroll">Administración de Archivos</a></li>
                          <li><a href="#" class="smoothScroll">Videos</a></li>
-                         <li><a href="#" class="smoothScroll">Infografias</a></li>
+                         <li><a href="./AdminitrarInfografias.php" class="smoothScroll">Infografias</a></li>
                        <!--  <li><a href="#testimonial" class="smoothScroll">Reviews</a></li> -->
-                         <li><a href="#" class="smoothScroll">Recursos</a></li>
+                         <li><a href="./AdminitrarRecurso.php" class="smoothScroll">Recursos</a></li>
                     </ul>
                </div>
 
@@ -84,45 +84,9 @@ https://templatemo.com/tm-516-known
      <!--FormularioVideo-->
      <section id="team">
         <div class="container">
-            <div class="row">
-                <h2 class="section-title">Administración de Videos</h2>
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead class="thead-dark" style=" margin:0 !important; background-color:#9dc15b; font-weight:bold;">
-                            <tr style="margin:0 !important; font-weight:bold;">
-                                <th class="col" style="width: 3%;">ID</th>
-                                <th class="col" style="width: 15%;">Título</th>
-                                <th class="col" style="width: 15%;">Link del Video</th>
-                                <th class="col" style="width: 20%;">Descripción</th>
-                                <th class="col" style="width: 10%;">Fecha de publicación</th>
-                                <th class="col" style="width: 8%;">Editar</th>
-                                <th class="col" style="width: 8%;">Eliminar</th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            <?php 
-                                $Videos = $conexion->readConsulta("SELECT * FROM recursos_audiovisuales");
-                                while($row=mysqli_fetch_object($Videos)){
-                                    $Id=$row->IDrecurso_Audio;
-                                    $Nombre=$row->Nombre;
-                                    $Url=$row->URL;
-                                    $Descripcion=$row->Descripcion;
-                                    $Fecha=$row->Fecha_Creacion;?>
-                                    <tr class="table" style="margin:0 !important; font-weight:bold;">
-                                        <td class="col" style="width: 3%;"><?php echo $Id?></td>
-                                        <td class="col" style="width: 15%;"><?php echo $Nombre?></td>
-                                        <td class="col" style="width: 15%;"><?php echo $Url?></td>
-                                        <td class="col" style="width: 22%;"><?php echo $Descripcion?></td>
-                                        <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="AdminitrarVideos.php?id_Video=<?php echo $Id?>&Editar#llenar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <!--<td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Video=<?php echo $Id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>-->
-                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $Id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
-                                    </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-                <?php
+          <div class="row">
+               <h2 class="section-title">Administración de Videos</h2>
+               <?php
                     if(isset($_GET["id_Video"]) && isset($_GET["Editar"])){
                         $id_AV = $_GET["id_Video"];
                         $consulta = $conexion->readOne("recursos_audiovisuales",$id_AV);
@@ -162,6 +126,46 @@ https://templatemo.com/tm-516-known
                     </div>";
                     }
                 ?>
+          </div>
+            <div class="row">
+            <h2 class="section-title">Tabla de Videos</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="thead-dark" style=" margin:0 !important; background-color:#9dc15b; font-weight:bold;">
+                            <tr style="margin:0 !important; font-weight:bold;">
+                                <th class="col" style="width: 3%;">ID</th>
+                                <th class="col" style="width: 15%;">Título</th>
+                                <th class="col" style="width: 15%;">Link del Video</th>
+                                <th class="col" style="width: 20%;">Descripción</th>
+                                <th class="col" style="width: 10%;">Fecha de publicación</th>
+                                <th class="col" style="width: 8%;">Editar</th>
+                                <th class="col" style="width: 8%;">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <?php 
+                                $Videos = $conexion->readConsulta("SELECT * FROM recursos_audiovisuales");
+                                while($row=mysqli_fetch_object($Videos)){
+                                    $Id=$row->IDrecurso_Audio;
+                                    $Nombre=$row->Nombre;
+                                    $Url=$row->URL;
+                                    $Descripcion=$row->Descripcion;
+                                    $Fecha=$row->Fecha_Creacion;?>
+                                    <tr class="table" style="margin:0 !important; font-weight:bold;">
+                                        <td class="col" style="width: 3%;"><?php echo $Id?></td>
+                                        <td class="col" style="width: 15%;"><?php echo $Nombre?></td>
+                                        <td class="col" style="width: 15%;"><?php echo $Url?></td>
+                                        <td class="col" style="width: 22%;"><?php echo $Descripcion?></td>
+                                        <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
+                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="AdminitrarVideos.php?id_Video=<?php echo $Id?>&Editar#llenar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
+                                        <!--<td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Video=<?php echo $Id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>-->
+                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $Id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                    </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
         </div>
      </section>
