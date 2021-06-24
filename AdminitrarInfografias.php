@@ -121,7 +121,7 @@ https://templatemo.com/tm-516-known
                                     $Extencion=$row->Extencion; 
                                     $Url=$row->url; 
                                     $Fecha=$row->Fecha_publicacion;
-                                    $direc = "../Fomentando-Buenas-Practicas-Empresas-ECU/". $Url; ?>
+                                     ?>
 
                                     <tr class="table" style="margin:0 !important; font-weight:bold;">
                                         <td class="col" style="width: 3%;"><?php echo $id?></td>
