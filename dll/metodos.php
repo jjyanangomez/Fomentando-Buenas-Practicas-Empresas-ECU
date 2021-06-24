@@ -54,9 +54,21 @@
 	if(isset($_POST["Agregar"])){
 		$Nombre = $_POST["Nombre"];
 		$Tipo = $_POST["Tipo"];
-		$Archivo = $_POST["Archivo"];
+		$nombreArchivo = $_FILES['archivo']['name'];
+		$new_name_archivo = null;
+
+		$archivo1 = $_FILES['archivo']['tmp_name']; 
+        $dir1 = 'files/';
+    	if (!file_exists($dir1)) {
+		mkdir($dir1, 0777, true);
+     	}
+	    $new_name_archivo = $dir1 . $nombreArchivo;
+
+	    move_uploaded_file($archivo1,"../". $new_name_archivo);
+
 		$Fecha = $_POST["Fecha"];
-		$envio1 = "INSERT INTO `recursos_digitales`(`Nombre`, `Tipo`, `Archivo`, `Fecha_Creacion`) VALUES ('$Nombre','$Tipo','$Archivo','$Fecha')";
+
+		$envio1 = "INSERT INTO `recursos_digitales`(`Nombre`, `Tipo`, `Archivo`, `Fecha_Creacion`) VALUES ('$Nombre','$Tipo','$new_name_archivo','$Fecha')";
 		$resultado1 = $conexion2->InsertConsulta($envio1);
 		if(!$resultado1){
 
@@ -103,25 +115,6 @@ if(isset($_POST["AgregarInfografia"] )){
 
 	move_uploaded_file($archivo,"../". $new_name_file);
 	
-    
-
-	/*if ($file_name != '' || $file_name != null) {
-        $file_type = $_FILES['files']['type'];
-        list($type, $extencion) = explode('/', $file_type);
-        if ($extencion == 'pdf') {
-		   
-            $dir = 'files/';
-            if (!file_exists($dir)) {
-                mkdir($dir, 0777, true);
-            }
-            $file_tmp_name = $_FILES['files']['tmp_name'];
-            //$new_name_file = 'files/' . date('Ymdhis') . '.' . $extension;
-            //$new_name_file = $dir . $file_name . '.' . $extencion;
-			$new_name_file = $dir . $file_name ;
-			move_uploaded_file($file_tmp_name, $new_name_file);
-            
-        }
-    }*/
 	$Fecha = $_POST["Fecha"];
 
 	$envio2 = "INSERT INTO `recursos_infografia`(`Titulo`, `Categoria`, `Extencion`,`url`, `Fecha_publicacion`) VALUES ('$Titulo','$Categoria','$Extencion','$new_name_file','$Fecha')";

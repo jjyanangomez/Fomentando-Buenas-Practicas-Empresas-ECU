@@ -85,11 +85,12 @@ https://templatemo.com/tm-516-known
 
           </div>
      </section>
-     <!--FormularioVideo-->
+     <!--FormularioInfografia-->
      
      
      <section id="team">
         <div class="container">
+             
             <div class="row">
                 <h2 class="section-title">Administración de Infografias</h2>
                 <div class="table-responsive">
@@ -132,14 +133,14 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-success" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-danger" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 7%;"><a class="btn btn-primary" target = "_black" href="./<?php echo  $Url; ?>" >Ver</a></td>
+                                        <td class="col" style="width: 7%;"><a class="submit-btn form-control" style= background-color:#cfd4d7 target = "_black" href="./<?php echo  $Url; ?>" >Ver</a></td>
                                        
                                     </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
-                <!--IngresarRecurso-->
+                <!--IngresarInfografia-->
                 <div class="col-md-offset-1 col-md-4 col-sm-12">
                     <form action="./dll/metodos.php" method="POST" enctype=multipart/form-data>
                         <h3 class="section-title">Agregar Infografías</h3>
@@ -148,7 +149,8 @@ https://templatemo.com/tm-516-known
                         <input type="text" name="Categoria" class="form-control" placeholder="Ingrese Categoria" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" name="Extencion" class="form-control" placeholder="Ingrese el Extencion" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>                      
+                        <div class="div-table-cell" style="width: 4%;"></div>   
+                        <button class="submit-btn form-control" style= background-color:#87cbf5>Subir Archivo</button>                   
                         <input type="file" name="files" class="form-control" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de publicación" required="">
@@ -162,6 +164,7 @@ https://templatemo.com/tm-516-known
             </div>
         </div>
      </section>
+
      <section id="Completar">
                <div class="row">
                     
@@ -249,38 +252,7 @@ https://templatemo.com/tm-516-known
                     $("#Fecha").datepicker();  
                });  
           });  
-     </script>
-       
-     <script>
-
-          function onSubmitForm() {
-               var frm = document.getElementById('form1');
-               var data = new FormData(frm);
-               var xhttp = new XMLHttpRequest();
-               xhttp.onreadystatechange = function () {
-               if (this.readyState == 4) {
-               var msg = xhttp.responseText;
-               if (msg == 'success') {
-                    alert(msg);
-                   
-                   
-                    } else {
-
-                         alert(msg);
-                                        }
-
-                          }
-                };
-                    xhttp.open("POST", "metodos.php", true);
-                    xhttp.send(data);
-                    $('#form1').trigger('reset');
-          }
-               function openModelPDF(url) {
-                    $('#modalPdf').modal('show');
-                    $('#iframePDF').attr('src','<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/ProyectoINGWEB/Fomentando-Buenas-Practicas-Empresas-ECU/'; ?>'+url);
-                    
-               }
-     </script>
+     </script>     
 
 </body>
 </html>
