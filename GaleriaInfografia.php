@@ -94,27 +94,42 @@ https://templatemo.com/tm-516-known
                     </div>
                     <?php
                          $infografias = $conexion->readConsulta("SELECT * FROM recursos_infografia");
-                         $array = array("pdf1.png", "pdf2.png", "pdf3.png", "pdf4.jpg");
                          while($row=mysqli_fetch_object($infografias)){
-                              $numero_aleatorio = rand(0,4);
                               $Id=$row->id_recurso_infografia;
                               $Nombre=$row->Titulo;
                               $Categoria=$row->Categoria;
                               $Url=$row->url;
-                              /*$Extension =$row->$Extencion;*/
-                              $Fecha=$row->Fecha_publicacion;?>
-                              <div class="col-md-3 col-sm-6">
-                                   <div class="team-thumb">
-                                        <div class="team-image">
-                                             <img src="<?php echo $array?>" class="img-responsive" alt="" >
+                              $Extencion=$row->Extencion;
+                              $Fecha=$row->Fecha_publicacion;
+                              if ($Extencion == ".pdf"){?>
+                                   <div class="col-md-3 col-sm-6">
+                                        <div class="team-thumb">
+                                             <div class="team-image">
+                                                  <img src="./images/pdf2.png" class="img-responsive" alt="" style="width: 170px; height: 170px">
+                                             </div>
+                                             <div class="team-info">
+                                                  <h5><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
+                                             </div>
+                                        
                                         </div>
-                                        <div class="team-info">
-                                             <h5><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
-                                             <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
-                                        </div>
-                                   
                                    </div>
-                              </div>
+                              <?php } ?>
+                              <?php
+                              if ($Extencion != ".pdf"){?>
+                                   <div class="col-md-3 col-sm-6">
+                                        <div class="team-thumb">
+                                             <div class="team-image">
+                                                  <img src="./images/ARelacionados_4.png" class="img-responsive" alt="">
+                                             </div>
+                                             <div class="team-info">
+                                                  <h5><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
+                                             </div>
+                                        
+                                        </div>
+                                   </div>
+                              <?php } ?>                               
                     <?php } ?> 
                     
 
