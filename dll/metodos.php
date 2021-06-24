@@ -84,36 +84,47 @@
 		header("Location: ../AdminitrarRecurso.php");
 	}
 /*Infografias*/
-if(isset($_POST["Agregar"])){
+if(isset($_POST["AgregarInfografia"] )){
 	$Titulo = $_POST["Titulo"];
 	$Categoria = $_POST["Categoria"];
 	$Extencion = $_POST["Extencion"];
 	
-	$file_name = $_FILES['file']['name'];
+	$file_name = $_FILES['files']['name']; 
+	$new_name_file = null;
 
-    $new_name_file = null;
+	//$file_name = $_POST['files'];
+	//$nombre = $_FILES['files']['name']; 
+    $archivo = $_FILES['files']['tmp_name']; 
+    $dir = '../files/';
+	if (!file_exists($dir)) {
+		mkdir($dir, 0777, true);
+	}
+	$new_name_file = $dir . $file_name;
 
+	move_uploaded_file($archivo, $new_name_file);
+	
+    
 
 	/*if ($file_name != '' || $file_name != null) {
-        $file_type = $_FILES['file']['type'];
+        $file_type = $_FILES['files']['type'];
         list($type, $extencion) = explode('/', $file_type);
         if ($extencion == 'pdf') {
-		    echo "Entro";
+		   
             $dir = 'files/';
             if (!file_exists($dir)) {
                 mkdir($dir, 0777, true);
             }
-            $file_tmp_name = $_FILES['file']['tmp_name'];
+            $file_tmp_name = $_FILES['files']['tmp_name'];
             //$new_name_file = 'files/' . date('Ymdhis') . '.' . $extension;
-            $new_name_file = $dir . $file_name . '.' . $extencion;
-            if (copy($file_tmp_name, $new_name_file)) {
-                
-            }
+            //$new_name_file = $dir . $file_name . '.' . $extencion;
+			$new_name_file = $dir . $file_name ;
+			move_uploaded_file($file_tmp_name, $new_name_file);
+            
         }
     }*/
 	$Fecha = $_POST["Fecha"];
 
-	$envio2 = "INSERT INTO `recursos_infografia`(`Titulo`, `Categoria`, `Extencion`,`url`, `Fecha_publicacion`) VALUES ('$Titulo','$Categoria','$Extencion','$file_name','$Fecha')";
+	$envio2 = "INSERT INTO `recursos_infografia`(`Titulo`, `Categoria`, `Extencion`,`url`, `Fecha_publicacion`) VALUES ('$Titulo','$Categoria','$Extencion','$new_name_file','$Fecha')";
 	$resultado2 = $conexion3->InsertConsulta($envio2);
 	if(!$resultado2){
 

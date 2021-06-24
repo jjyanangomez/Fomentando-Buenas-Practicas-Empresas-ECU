@@ -131,7 +131,7 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-success" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-danger" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 7%;"><a class="btn btn-primary" target = "_black" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/ProyectoINGWEB/Fomentando-Buenas-Practicas-Empresas-ECU/' . $Url; ?>" >Ver</a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-primary" target = "_black" href="<?php $direc = "../"; echo 'http://' . $_SERVER['HTTP_HOST'] . $Url; ?>" >Ver</a></td>
                                        
                                     </tr>
                             <?php } ?>
@@ -140,7 +140,7 @@ https://templatemo.com/tm-516-known
                 </div>
                 <!--IngresarRecurso-->
                 <div class="col-md-offset-1 col-md-4 col-sm-12">
-                    <form action="./dll/metodos.php" method="POST">
+                    <form action="./dll/metodos.php" method="POST" enctype=multipart/form-data>
                         <h3 class="section-title">Agregar Infografías</h3>
                         <input type="text" name="Titulo" class="form-control" placeholder="Ingrese el titulo de la infografía" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
@@ -148,35 +148,15 @@ https://templatemo.com/tm-516-known
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" name="Extencion" class="form-control" placeholder="Ingrese el Extencion" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>                      
-                        <input type="file" name="file" class="form-control" id="file" >
+                        <input type="file" name="files" class="form-control" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de publicación" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" name="Agregar">Agregar</button>
+                        <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" name="AgregarInfografia">Agregar</button>
                         <!--<input type="submit" class="submit-btn form-control" style= background-color:#9dc15b value="Agregar" name="Agregar">-->
                     </form>
                 </div>
-                <!--Modal-->
-                <div class="modal fade" id="modalPdf" tabindex="-1" aria-labelledby="modalPdf" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ver archivo</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <iframe id="iframePDF" frameborder="0" scrolling="no" width="100%" height="500px"></iframe>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-          <!--FinModal-->
+               
 
             </div>
         </div>
@@ -270,7 +250,36 @@ https://templatemo.com/tm-516-known
           });  
      </script>
        
-    
+     <script>
+
+          function onSubmitForm() {
+               var frm = document.getElementById('form1');
+               var data = new FormData(frm);
+               var xhttp = new XMLHttpRequest();
+               xhttp.onreadystatechange = function () {
+               if (this.readyState == 4) {
+               var msg = xhttp.responseText;
+               if (msg == 'success') {
+                    alert(msg);
+                   
+                   
+                    } else {
+
+                         alert(msg);
+                                        }
+
+                          }
+                };
+                    xhttp.open("POST", "metodos.php", true);
+                    xhttp.send(data);
+                    $('#form1').trigger('reset');
+          }
+               function openModelPDF(url) {
+                    $('#modalPdf').modal('show');
+                    $('#iframePDF').attr('src','<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/ProyectoINGWEB/Fomentando-Buenas-Practicas-Empresas-ECU/'; ?>'+url);
+                    
+               }
+     </script>
 
 </body>
 </html>
