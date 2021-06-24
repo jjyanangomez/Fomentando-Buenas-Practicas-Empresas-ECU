@@ -101,19 +101,37 @@ https://templatemo.com/tm-516-known
                                     $Nombre=$row->Nombre;                              
                                     $Tipo=$row->Tipo;                               
                                     $Archivo=$row->Archivo;                              
-                                    $Fecha=$row->Fecha_Creacion;?>
-                              <div class="col-md-3 col-sm-6">
-                                   <div class="team-thumb">
-                                        <div class="team-image">
-                                             <img src="<?php echo $array?>" class="img-responsive" alt="" >
+                                    $Fecha=$row->Fecha_Creacion;
+
+                             if ($Tipo == ".pdf"){?>
+                                   <div class="col-md-3 col-sm-6">
+                                        <div class="team-thumb">
+                                             <div class="team-image">
+                                                  <img src="./images/pdf2.png" class="img-responsive" alt="" style="width: 170px; height: 170px">
+                                             </div>
+                                             <div class="team-info">
+                                                  <h5><a rel="stylesheet" href="./<?php echo $Archivo?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
+                                             </div>
+                                        
                                         </div>
-                                        <div class="team-info">
-                                             <h5><a rel="stylesheet" href="./<?php echo $Archivo?>" target="_blank"><?php echo $Nombre?></a></h5>
-                                             <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
-                                        </div>
-                                   
                                    </div>
-                              </div>
+                              <?php } ?>
+                              <?php
+                              if ($Tipo == ".doc"){?>
+                                   <div class="col-md-3 col-sm-6">
+                                        <div class="team-thumb">
+                                             <div class="team-image">
+                                                  <img src="./images/doc1.jpg" class="img-responsive" alt="" style="width: 224px; height: 170px">
+                                             </div>
+                                             <div class="team-info">
+                                                  <h5><a rel="stylesheet" href="./<?php echo $Archivo?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
+                                             </div>
+                                        
+                                        </div>
+                                   </div>
+                              <?php } ?>                               
                     <?php } ?> 
 
                     
