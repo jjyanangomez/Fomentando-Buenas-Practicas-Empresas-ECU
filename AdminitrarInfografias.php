@@ -148,7 +148,12 @@ https://templatemo.com/tm-516-known
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" name="Categoria" class="form-control" placeholder="Ingrese Categoria" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Extencion" class="form-control" placeholder="Ingrese el Extencion" required="">
+                        <select type ="select" name="Extencion" class="form-control" style= background-color:#e4e8dc>
+                                    <option value=".pdf">.pdf</option>
+                                    <option value=".png">.png</option>
+                                    <option value=".jpg">.jpg</option>
+
+                                </select>
                         <div class="div-table-cell" style="width: 4%;"></div>   
                         <button class="submit-btn form-control" style= background-color:#87cbf5>Subir Archivo</button>                   
                         <input type="file" name="files" class="form-control" required="">

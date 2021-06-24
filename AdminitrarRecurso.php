@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
 
-     <title>ADMIN RECURSOS</title>
+
 <!-- 
 
 Known Template 
@@ -138,7 +138,11 @@ https://templatemo.com/tm-516-known
                         <h3 class="section-title">Agregar Recurso</h3>
                         <input type="text" name="Nombre" class="form-control" placeholder="Ingrese el nombre del recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Tipo" class="form-control" placeholder="Ingrese tipo recurso" required="">
+
+                        <select type ="select" name="Tipo" class="form-control" style= background-color:#e4e8dc>
+                                    <option value=".pdf">.pdf</option>
+                                    <option value=".doc">.doc</option>
+                                </select>
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <button class="submit-btn form-control" style= background-color:#87cbf5>Subir Archivo</button>                   
                         <input type="file" name="archivo" class="form-control" required="">
