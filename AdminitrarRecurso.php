@@ -99,10 +99,11 @@ https://templatemo.com/tm-516-known
                                 <th class="col" style="width: 3%;">ID</th>
                                 <th class="col" style="width: 15%;">Nombre del Recurso</th>
                                 <th class="col" style="width: 15%;">Tipo</th>
-                                <th class="col" style="width: 20%;">Archivo</th>
+                                <th class="col" style="width: 20%;">URL</th>
                                 <th class="col" style="width: 10%;">Fecha de publicación</th>
-                                <th class="col" style="width: 8%;">Editar</th>
-                                <th class="col" style="width: 8%;">Eliminar</th>
+                                <th class="col" style="width: 7%;">Editar</th>
+                                <th class="col" style="width: 7%;">Eliminar</th>
+                                <th class="col" style="width: 7%;">Ver Archivo</th>
                             </tr>
                         </thead>
                         <tbody >
@@ -121,10 +122,11 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 3%;"><?php echo $ID?></td>
                                         <td class="col" style="width: 15%;"><?php echo $Nombre?></td>
                                         <td class="col" style="width: 15%;"><?php echo $Tipo?></td>
-                                        <td class="col" style="width: 22%;"><?php echo $Archivo?></td>
+                                        <td class="col" style="width: 20%;"><?php echo $Archivo?></td>
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-success" href="dll/metodos.php?id_Recurso=<?php echo $ID?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="dll/metodos.php?id_Recurso=<?php echo $ID?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-success" href="dll/metodos.php?id_Recurso=<?php echo $ID?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-danger" href="dll/metodos.php?id_Recurso=<?php echo $ID?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="submit-btn form-control" style= background-color:#cfd4d7 target = "_black" href="./<?php echo  $Archivo; ?>" >Ver</a></td>
                                     </tr>
                             <?php } ?>
                         </tbody>
@@ -132,13 +134,14 @@ https://templatemo.com/tm-516-known
                 </div>
                 <!--IngresarRecurso-->
                 <div class="col-md-offset-1 col-md-4 col-sm-12">
-                    <form action="./dll/metodos.php" method="POST">
+                    <form action="./dll/metodos.php" method="POST" enctype=multipart/form-data >
                         <h3 class="section-title">Agregar Recurso</h3>
                         <input type="text" name="Nombre" class="form-control" placeholder="Ingrese el nombre del recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" name="Tipo" class="form-control" placeholder="Ingrese tipo recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="file" />
+                        <button class="submit-btn form-control" style= background-color:#87cbf5>Subir Archivo</button>                   
+                        <input type="file" name="archivo" class="form-control" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
                         <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de creación del recurso" required="">
                         <div class="div-table-cell" style="width: 4%;"></div>
