@@ -15,9 +15,9 @@ $filas=mysqli_num_rows($resultado);
 
 
 if ($filas) {
-	echo "Bienvenid@";
+	//echo "Bienvenid@";
 	//echo $password = md5($_POST['Contrasenia']);
-	//header("location:Administrador.html");
+	header("location:Administrador.html");
 	
 	}else{
 		echo '<script>alert("Datos incorrectos")</script>' ;
