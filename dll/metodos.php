@@ -51,7 +51,7 @@
 	
 
 	/*Recursos*/
-	if(isset($_POST["Agregar"])){
+	if(isset($_POST["AgregarRecurso"])){
 		$Nombre = $_POST["Nombre"];
 		$Tipo = $_POST["Tipo"];
 		$nombreArchivo = $_FILES['archivo']['name'];

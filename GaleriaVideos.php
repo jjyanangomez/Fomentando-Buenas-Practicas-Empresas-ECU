@@ -110,8 +110,8 @@ https://templatemo.com/tm-516-known
                                              <!--<img src="images/gifvideos1.gif" class="img-responsive" alt="" >-->
                                         </div>
                                         <div class="team-info">
-                                             <h5><a rel="stylesheet" href="<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
-                                             <span><?php echo $Descripcion?></span>
+                                             <h5 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                             <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><?php echo $Descripcion?></span>
                                         </div>
                                    
                                    </div>

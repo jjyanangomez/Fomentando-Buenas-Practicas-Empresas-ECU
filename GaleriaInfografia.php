@@ -108,8 +108,8 @@ https://templatemo.com/tm-516-known
                                                   <img src="./images/pdf2.png" class="img-responsive" alt="" style="width: 170px; height: 170px">
                                              </div>
                                              <div class="team-info">
-                                                  <h5><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
-                                                  <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
+                                                  <h5 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><b>Fecha publicacion: </b><?php echo $Fecha?></span>
                                              </div>
                                         
                                         </div>
@@ -123,8 +123,8 @@ https://templatemo.com/tm-516-known
                                                   <img src="./images/ARelacionados_4.png" class="img-responsive" alt="">
                                              </div>
                                              <div class="team-info">
-                                                  <h5><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
-                                                  <span><b>Fecha publicacion: </b><?php echo $Fecha?></span>
+                                                  <h5 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><b>Fecha publicacion: </b><?php echo $Fecha?></span>
                                              </div>
                                         
                                         </div>

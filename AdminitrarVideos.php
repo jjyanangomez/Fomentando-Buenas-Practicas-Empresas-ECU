@@ -72,10 +72,14 @@ https://templatemo.com/tm-516-known
                     <ul class="nav navbar-nav navbar-nav-first">
                          <li><a href="./Administrador.html" class="smoothScroll">Inicio</a></li>
                          <li><a href="#team" class="smoothScroll">Administración de Archivos</a></li>
-                         <li><a href="#" class="smoothScroll">Videos</a></li>
+                         <li><a href="./AdminitrarVideos.php" class="smoothScroll">Videos</a></li>
                          <li><a href="./AdminitrarInfografias.php" class="smoothScroll">Infografias</a></li>
                        <!--  <li><a href="#testimonial" class="smoothScroll">Reviews</a></li> -->
                          <li><a href="./AdminitrarRecurso.php" class="smoothScroll">Recursos</a></li>
+                    </ul>
+
+                    <ul class=" navbar-right" style="margin-top: 16px">
+                         <li><a class="btn btn-danger" href="#">Salir</a></li>
                     </ul>
                </div>
 
@@ -89,7 +93,7 @@ https://templatemo.com/tm-516-known
                <?php
                     if(isset($_GET["id_Video"]) && isset($_GET["Editar"])){
                         $id_AV = $_GET["id_Video"];
-                        $consulta = $conexion->readOne("recursos_audiovisuales",$id_AV);
+                        $consulta = $conexion->readOne("SELECT * FROM recursos_audiovisuales WHERE IDrecurso_Audio=$id_AV");
                         $row = mysqli_fetch_object($consulta);
                         $Nombre_AV=$row->Nombre;
                         $Url_AV=$row->URL;
@@ -257,9 +261,7 @@ https://templatemo.com/tm-516-known
             if(confirm("Esta seguro que desea Eliminar este Campo: ")){
                 window.location.href = "dll/metodos.php?id_Video="+id+"&EliminarVideo";
             }
-
         }
-
         ;  
      </script>
 

@@ -1,7 +1,6 @@
 <?php 
      include("dll/database.php");
      $conexion = new Database();
-     $conexion3 = new Database();
 
 
 ?>
@@ -74,12 +73,16 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#courses" class="smoothScroll">Inicio</a></li>
+                         <li><a href="./Administrador.html" class="smoothScroll">Inicio</a></li>
                          <li><a href="#team" class="smoothScroll">Administración de Archivos</a></li>
-                         <li><a href="#" class="smoothScroll">Videos</a></li>
-                         <li><a href="#" class="smoothScroll">Infografias</a></li>
+                         <li><a href="./AdminitrarVideos.php" class="smoothScroll">Videos</a></li>
+                         <li><a href="./AdminitrarInfografias.php" class="smoothScroll">Infografias</a></li>
                        <!--  <li><a href="#testimonial" class="smoothScroll">Reviews</a></li> -->
-                         <li><a href="#" class="smoothScroll">Recursos</a></li>
+                         <li><a href="./AdminitrarRecurso.php" class="smoothScroll">Recursos</a></li>
+                    </ul>
+
+                    <ul class=" navbar-right" style="margin-top: 16px">
+                         <li><a class="btn btn-danger" href="#">Salir</a></li>
                     </ul>
                </div>
 
@@ -90,9 +93,67 @@ https://templatemo.com/tm-516-known
      
      <section id="team">
         <div class="container">
-             
+             <div class="row">
+               <h2 class="section-title">Administración de Infografias</h2>
+               <!--IngresarInfografia-->
+               <?php 
+                    if(isset($_GET["id_Infografia"]) && isset($_GET["Editar"])){
+                         $id_In = $_GET["id_Infografia"];
+                         $consulta = $conexion->readOne("SELECT * FROM recursos_infografia WHERE id_recurso_infografia=$id_In");
+                         $row = mysqli_fetch_object($consulta);
+                         $Titulo = $row->Titulo;
+                         $Categoria = $row->Categoria;
+                         $Fecha = $row->Fecha_publicacion;
+                         echo "<div class='col-md-offset-1 col-md-4 col-sm-12'>
+                         <form action='./dll/metodos.php' method='POST' enctype=multipart/form-data>
+                             <h3 class='section-title'>Agregar Infografías</h3>
+                             <input type='text' name='Titulo' class='form-control' placeholder='Ingrese el titulo de la infografía' required='' value='$Titulo'>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <input type='text' name='Categoria' class='form-control' placeholder='Ingrese Categoria' required='' value='$Categoria'>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <select type ='select' name='Extencion' class='form-control' style= background-color:#e4e8dc>
+                                         <option value='.pdf'>.pdf</option>
+                                         <option value='.png'>.png</option>
+                                         <option value='.jpg'>.jpg</option>
+                                     </select>
+                             <div class='div-table-cell' style='width: 4%;'></div>   
+                             <button class='submit-btn form-control' style= background-color:#87cbf5>Subir Archivo</button>                   
+                             <input type='file' name='files' class='form-control' required=''>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de publicación' required='' value='$Fecha'>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <button class='submit-btn form-control' style= background-color:#9dc15b id='form-submit' name='ActualizarInfografia'>Actualizar</button>
+                             <!--<input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='Agregar' name='Agregar'>-->
+                         </form>
+                     </div>";
+                    }else{
+                         echo "<div class='col-md-offset-1 col-md-4 col-sm-12'>
+                         <form action='./dll/metodos.php' method='POST' enctype=multipart/form-data>
+                             <h3 class='section-title'>Agregar Infografías</h3>
+                             <input type='text' name='Titulo' class='form-control' placeholder='Ingrese el titulo de la infografía' required=''>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <input type='text' name='Categoria' class='form-control' placeholder='Ingrese Categoria' required=''>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <select type ='select' name='Extencion' class='form-control' style= background-color:#e4e8dc>
+                                         <option value='.pdf'>.pdf</option>
+                                         <option value='.png'>.png</option>
+                                         <option value='.jpg'>.jpg</option>
+                                     </select>
+                             <div class='div-table-cell' style='width: 4%;'></div>   
+                             <button class='submit-btn form-control' style= background-color:#87cbf5>Subir Archivo</button>                   
+                             <input type='file' name='files' class='form-control' required=''>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de publicación' required=''>
+                             <div class='div-table-cell' style='width: 4%;'></div>
+                             <button class='submit-btn form-control' style= background-color:#9dc15b id='form-submit' name='AgregarInfografia'>Agregar</button>
+                             <!--<input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='Agregar' name='Agregar'>-->
+                         </form>
+                     </div>";
+                    }
+               ?>
+             </div>
             <div class="row">
-                <h2 class="section-title">Administración de Infografias</h2>
+                <h2 class="section-title">Tabla de Infografias</h2>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead class="thead-dark" style=" margin:0 !important; background-color:#9dc15b; font-weight:bold;">
@@ -111,10 +172,7 @@ https://templatemo.com/tm-516-known
                         <tbody >
                             <?php 
                          
-                                $Infografia = $conexion3->readConsulta("SELECT * FROM recursos_infografia");
-                        
-                         
-
+                                $Infografia = $conexion->readConsulta("SELECT * FROM recursos_infografia");
                                 while($row=mysqli_fetch_object($Infografia)){                                  
                                     $id=$row->id_recurso_infografia;                                                   
                                     $Titulo=$row->Titulo;     
@@ -131,38 +189,14 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 10%;"><?php echo $Extencion?></td> 
                                         <td class="col" style="width: 15%;"><?php echo $Url?></td>
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
-                                        <td class="col" style="width: 7%;"><a class="btn btn-success" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 7%;"><a class="btn btn-danger" href="dll/metodos.php?id_Infografia=<?php echo $id?>&Eliminar"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 7%;"><a class="btn btn-success" href="AdminitrarInfografias.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $Id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
                                         <td class="col" style="width: 7%;"><a class="submit-btn form-control" style= background-color:#cfd4d7 target = "_black" href="./<?php echo  $Url; ?>" >Ver</a></td>
                                        
                                     </tr>
                             <?php } ?>
                         </tbody>
                     </table>
-                </div>
-                <!--IngresarInfografia-->
-                <div class="col-md-offset-1 col-md-4 col-sm-12">
-                    <form action="./dll/metodos.php" method="POST" enctype=multipart/form-data>
-                        <h3 class="section-title">Agregar Infografías</h3>
-                        <input type="text" name="Titulo" class="form-control" placeholder="Ingrese el titulo de la infografía" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" name="Categoria" class="form-control" placeholder="Ingrese Categoria" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <select type ="select" name="Extencion" class="form-control" style= background-color:#e4e8dc>
-                                    <option value=".pdf">.pdf</option>
-                                    <option value=".png">.png</option>
-                                    <option value=".jpg">.jpg</option>
-
-                                </select>
-                        <div class="div-table-cell" style="width: 4%;"></div>   
-                        <button class="submit-btn form-control" style= background-color:#87cbf5>Subir Archivo</button>                   
-                        <input type="file" name="files" class="form-control" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <input type="text" id="Fecha" name="Fecha" class="form-control" placeholder="Fecha de publicación" required="">
-                        <div class="div-table-cell" style="width: 4%;"></div>
-                        <button class="submit-btn form-control" style= background-color:#9dc15b id="form-submit" name="AgregarInfografia">Agregar</button>
-                        <!--<input type="submit" class="submit-btn form-control" style= background-color:#9dc15b value="Agregar" name="Agregar">-->
-                    </form>
                 </div>
                
 
@@ -257,7 +291,15 @@ https://templatemo.com/tm-516-known
                     $("#Fecha").datepicker();  
                });  
           });  
-     </script>     
+     </script>    
+     <script type="text/javascript">
+        function preguntar(id){
+            if(confirm("Esta seguro que desea Eliminar este Campo: ")){
+                window.location.href = "dll/metodos.php?id_Infografia="+id+"&Eliminar";
+            }
+        }
+        ;  
+     </script> 
 
 </body>
 </html>
