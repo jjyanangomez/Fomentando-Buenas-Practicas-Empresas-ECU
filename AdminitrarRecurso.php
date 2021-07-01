@@ -124,7 +124,8 @@ https://templatemo.com/tm-516-known
                          <div class='col-md-offset-1 col-md-4 col-sm-12'>
                              <form action='./dll/metodos.php' method='POST' enctype=multipart/form-data >
                                  <h3 class='section-title'>Agregar Recurso</h3>
-                                 <input type='text' name='Nombre' class='form-control' placeholder='Ingrese el nombre del recurso' required=''>
+                                 <h5>Ingrese el nombre del recurso</h5>
+                                 <input type='text' name='Nombre' class='form-control' placeholder='Nombre del recurso' required=''>
                                  <div class='div-table-cell' style='width: 4%;'></div>
          
                                  <select type ='select' name='Tipo' class='form-control' style= background-color:#e4e8dc>
@@ -132,9 +133,11 @@ https://templatemo.com/tm-516-known
                                              <option value='.doc'>.doc</option>
                                          </select>
                                  <div class='div-table-cell' style='width: 4%;'></div>
+                                 <h5>Seleccione el archivo</h5>
                                  <button class='submit-btn form-control' style= background-color:#87cbf5>Subir Archivo</button>                   
                                  <input type='file' name='archivo' class='form-control' required=''>
                                  <div class='div-table-cell' style='width: 4%;'></div>
+                                 <h5>Ingrese la fecha de publicación</h5>
                                  <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de creación del recurso' required=''>
                                  <div class='div-table-cell' style='width: 4%;'></div>
                                  <button class='submit-btn form-control' style= background-color:#9dc15b id='form-submit' name='AgregarRecurso'>Agregar</button>

@@ -193,8 +193,12 @@ https://templatemo.com/tm-516-known
                                              </div>
 
                                              <div class="courses-detail">
-                                                  <h3><a href="#">Social Media Management</a></h3>
-                                                  <p>Descripción:1</p>
+                                                  <h3><a href="#">INTRODUCCIÓN</a></h3>
+                                                  <p>El concepto de lo que hoy se conoce como Responsabilidad Social Corporativa (RSC) ha
+                                                     evolucionado por diferentes causas y desde diferentes perspectivas: éticas, políticas,
+                                                     instrumentales e integradoras, en la percepción del individuo y por tanto de la sociedad. Esto ha
+                                                     fortalecido paulatinamente los argumentos para implementar la RSC en las organizaciones
+                                                     (Ortiz, 2013)</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -224,8 +228,10 @@ https://templatemo.com/tm-516-known
                                              </div>
 
                                              <div class="courses-detail">
-                                                  <h3><a href="#">Graphic & Web Design...</a></h3>
-                                                  <p>Descripción:2</p>
+                                                  <h3><a href="#">IMPORTANCIA</a></h3>
+                                                  <p>El tema de la Responsabilidad Social es de gran importancia para la gestión y desarrollo de las
+                                                  empresas, por cuanto permite establecer lineamientos efectivos sobre el buen uso de recursos
+                                                  en procura de un desarrollo saludable de las organizaciones y su entorno.</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -255,8 +261,11 @@ https://templatemo.com/tm-516-known
                                              </div>
 
                                              <div class="courses-detail">
-                                                  <h3><a href="#">Marketing Communication</a></h3>
-                                                  <p>Descripción:3</p>
+                                                  <h3><a href="#">POTENCIAL DE LA INNOVACIÓN</a></h3>
+                                                  <p>Las empresas a través de la página web tendrán acceso al conocimiento de la RSE y podrán
+                                                  autodianosticar su situación actual frente a la RSE, y se pondrá a su alcance varias estrategias
+                                                  generales sobre RSE. El indicador de medición será el número de empresas que se
+                                                  autodianóstiquen y visiten la página web.</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -286,8 +295,12 @@ https://templatemo.com/tm-516-known
                                              </div>
 
                                              <div class="courses-detail">
-                                                  <h3><a href="#">Summer Kids</a></h3>
-                                                  <p>Descripción:4</p>
+                                                  <h3><a href="#">DESCRIPCIÓN DE LA PROPUESTA Y METODOLOGÍA</a></h3>
+                                                  <p>Considerando que el aprendizaje basado en proyectos consiste en una modalidad de enseñanza
+                                                  y aprendizaje centrada en tareas, un proceso compartido de negociación entre los participantes,
+                                                  siendo su objetivo principal la obtención de un producto final. Este método promueve el
+                                                  aprendizaje individual y autónomo dentro de un plan de trabajo definido por objetivos y
+                                                  procedimientos.</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -303,36 +316,7 @@ https://templatemo.com/tm-516-known
                                    </div>
                               </div>
 
-                              <div class="col-md-4 col-sm-4">
-                                   <div class="item">
-                                        <div class="courses-thumb">
-                                             <div class="courses-top">
-                                                  <div class="courses-image">
-                                                       <img src="images/ARelacionados_5.png" class="img-responsive" alt="">
-                                                  </div>
-                                                  <!--<div class="courses-date">
-                                                       <span><i class="fa fa-calendar"></i> 5 / 10 / 2018</span>
-                                                       <span><i class="fa fa-clock-o"></i> 10 Hours</span>
-                                                  </div>-->
-                                             </div>
-
-                                             <div class="courses-detail">
-                                                  <h3><a href="#">Business &amp; Management</a></h3>
-                                                  <p>Descripción:5</p>
-                                             </div>
-
-                                             <div class="courses-info">
-                                                  <!--<div class="courses-author">
-                                                       <img src="images/author-image2.jpg" class="img-responsive" alt="">
-                                                       <span>Jessica</span>
-                                                  </div>-->
-                                                  <div class="courses-price">
-                                                       <a href="#"><span>Ver</span></a>
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </div>
+                              
 
                          </div>
 

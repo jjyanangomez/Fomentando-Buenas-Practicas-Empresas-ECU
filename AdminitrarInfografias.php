@@ -130,19 +130,25 @@ https://templatemo.com/tm-516-known
                          echo "<div class='col-md-offset-1 col-md-4 col-sm-12'>
                          <form action='./dll/metodos.php' method='POST' enctype=multipart/form-data>
                              <h3 class='section-title'>Agregar Infografías</h3>
-                             <input type='text' name='Titulo' class='form-control' placeholder='Ingrese el titulo de la infografía' required=''>
+                             
+                             <h5>Ingrese el titulo de la infografía</h5>
+                             <input type='text' name='Titulo' class='form-control' placeholder='Ingrese el titulo' required=''>                        
                              <div class='div-table-cell' style='width: 4%;'></div>
+                             <h5>Ingrese categoria de la infografia</h5>
                              <input type='text' name='Categoria' class='form-control' placeholder='Ingrese Categoria' required=''>
                              <div class='div-table-cell' style='width: 4%;'></div>
+
                              <select type ='select' name='Extencion' class='form-control' style= background-color:#e4e8dc>
                                          <option value='.pdf'>.pdf</option>
                                          <option value='.png'>.png</option>
                                          <option value='.jpg'>.jpg</option>
                                      </select>
                              <div class='div-table-cell' style='width: 4%;'></div>   
+                             <h5>Seleccione el archivo</h5>
                              <button class='submit-btn form-control' style= background-color:#87cbf5>Subir Archivo</button>                   
                              <input type='file' name='files' class='form-control' required=''>
                              <div class='div-table-cell' style='width: 4%;'></div>
+                             <h5>Ingrese la fecha de publicación</h5>
                              <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de publicación' required=''>
                              <div class='div-table-cell' style='width: 4%;'></div>
                              <button class='submit-btn form-control' style= background-color:#9dc15b id='form-submit' name='AgregarInfografia'>Agregar</button>
@@ -167,6 +173,7 @@ https://templatemo.com/tm-516-known
                                 <th class="col" style="width: 7%;">Editar</th>
                                 <th class="col" style="width: 7%;">Eliminar</th>
                                 <th class="col" style="width: 7%;">Ver Archivo</th>
+                                
                             </tr>
                         </thead>
                         <tbody >

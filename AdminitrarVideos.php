@@ -117,12 +117,16 @@ https://templatemo.com/tm-516-known
                         echo "<div class='col-md-offset-1 col-md-4 col-sm-12'>
                             <form action='./dll/metodos.php' method='POST'>
                             <h3 class='section-title'>Agregar video</h3>
-                            <input type='text' name='titulo' class='form-control' placeholder='Ingrese el titulo del video' required=''>
+                            <h5>Ingrese el titulo del video</h5>
+                            <input type='text' name='titulo' class='form-control' placeholder='Titulo del video' required=''>
                             <div class='div-table-cell' style='width: 4%;'></div>
-                            <input type='text' name='Url' class='form-control' placeholder='Ingrese la URL del video' required=''>
+                            <h5>Ingrese la URL del video</h5>
+                            <input type='text' name='Url' class='form-control' placeholder='URL del video' required=''>
                             <div class='div-table-cell' style='width: 4%;'></div>
+                            <h5>Ingrese la descripción del video</h5>
                             <input type='text' name='Descripcion' class='form-control' placeholder='Descripción' required=''>
                             <div class='div-table-cell' style='width: 4%;'></div>
+                            <h5>Ingrese la fecha de publicación del video</h5>
                             <input type='text' id='Fecha' name='Fecha' class='form-control' placeholder='Fecha de creación del video' required=''>
                             <div class='div-table-cell' style='width: 4%;'></div>
                             <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='AgregarVideo' name='AgregarVideo'>
