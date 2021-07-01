@@ -71,7 +71,7 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                    <li><a href="./Administrador.html" class="smoothScroll">Inicio</a></li>
+                    <li><a href="./Administrador.php" class="smoothScroll">Inicio</a></li>
                          <li><a href="#team" class="smoothScroll">Administración de Archivos</a></li>
                          <li><a href="./AdminitrarVideos.php" class="smoothScroll">Videos</a></li>
                          <li><a href="./AdminitrarInfografias.php" class="smoothScroll">Infografias</a></li>
@@ -80,7 +80,7 @@ https://templatemo.com/tm-516-known
                     </ul>
 
                     <ul class=" navbar-right" style="margin-top: 16px">
-                         <li><a class="btn btn-danger" href="#">Salir</a></li>
+                         <a href= "salir.php" class="btn btn-danger" >Salir</a>
                     </ul>
                </div>
 
