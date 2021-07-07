@@ -423,11 +423,11 @@ https://templatemo.com/tm-516-known
 
                     <div class="col-md-offset-1 col-md-4 col-sm-12">
                          <div class="entry-form">
-                              <form action="#" method="post">
+                              <form action="dll/metodos.php?AgregarPersona" method="post">
                                    <h2>Regístrese aquí</h2>
-                                   <input type="text" name="nombre Empresa" class="form-control" placeholder="Nombre de la empresa:" required="">
+                                   <input type="text" name="nombreEmpresa" class="form-control" placeholder="Nombre de la empresa:" required="">
                                    <input type="text" name="RUC" class="form-control" placeholder="Ruc:" required="">
-                                   <input type="text" name="nombre Representante" class="form-control" placeholder="Nombre del representante:" required="">
+                                   <input type="text" name="nombreRepresentante" class="form-control" placeholder="Nombre del representante:" required="">
                                    <input type="email" name="email" class="form-control" placeholder="Correo electrónico:" required="">
                                   
                                    <select id ="Provincia"  type ="select" name="Provincia" class="form-control">
@@ -442,7 +442,8 @@ https://templatemo.com/tm-516-known
                                 </select>
                                 <select id = "Canton" type ="select" name="Canton" class="form-control">
                                 </select>
-                                   <button class="submit-btn form-control" id="form-submit">Iniciar Encuesta</button>
+                                   <input type='submit' class='submit-btn form-control' onclick="preguntar()"value='IniciarEncuesta' name='Iniciar Encuesta'>
+                                   <!--<button class="submit-btn form-control" id="form-submit">Iniciar Encuesta</button>-->
                               </form>
                          </div>
                     </div>
@@ -566,6 +567,13 @@ https://templatemo.com/tm-516-known
                     });
                })
           });
+     </script>
+     <script type="text/javascript">
+        function preguntar(){
+            if(confirm("Asegurece que los campos del RUC sean iguales ")){
+            }
+        }
+        ;  
      </script>
 
 </body>

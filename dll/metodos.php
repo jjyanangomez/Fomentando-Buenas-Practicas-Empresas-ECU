@@ -136,7 +136,7 @@ if(isset($_GET["id_Infografia"]) && isset($_GET["Editar"])){
 if(isset($_GET["id_Infografia"]) && isset($_GET["Eliminar"])){
 	$iD= $_GET["id_Infografia"];
 	$envio2 = "DELETE FROM `recursos_infografia` WHERE id_recurso_infografia = $iD";
-	$resultado2 = $conexion3->deleteConsulta($envio2);;
+	$resultado2 = $conexion3->deleteConsulta($envio2);
 	if(!$resultado2){
 		die("Query Failed");
 	}else{
@@ -144,6 +144,25 @@ if(isset($_GET["id_Infografia"]) && isset($_GET["Eliminar"])){
 	}
 	header("Location: ../AdminitrarInfografias.php");
 }
-
+/*Agregar Encuestado*/
+if(isset($_GET["AgregarPersona"])){
+	$NombreEmpre = $_POST["nombreEmpresa"];
+	$NombreRepre = $_POST["nombreRepresentante"];
+	$RUC = $_POST["RUC"];
+	$Email = $_POST["email"];
+	$Canton = (int)$_POST["Canton"];
+	$sql = "INSERT INTO cliente(Nombre_Empresa, Nombre_Representante, RUC, Email, IdCanton) VALUES ('$NombreEmpre','$NombreRepre','$RUC','$Email','$Canton')";
+	$resultado = $conexion->InsertConsulta($sql);
+	if(!$resultado){
+		die("Query Failed");
+	}else{
+		echo "Completado";
+	}
+	echo '<script type="text/javascript">
+		window.open("https://survey123.arcgis.com/share/828a14a2074847899a525923a82b5b5e","_blank");
+		location.href= "../index.php";
+		</script>';
+	//header("Location: ../index.php");
+}
 
 ?>
