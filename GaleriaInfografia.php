@@ -105,13 +105,13 @@ https://templatemo.com/tm-516-known
                                    <div class="col-md-3 col-sm-6">
                                         <div class="team-thumb">
                                              <div class="team-image">
-                                                  <img src="./images/pdf2.png" class="img-responsive" alt="" style="width: 170px; height: 170px">
+                                                 
                                              </div>
                                              <div class="team-info" >
-                                              
+                                                  <embed src="./<?php echo $Url."#toolbar=0"?> " style="width:290px; height:280px; "></embed>
                                                   <h5  style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Url."#toolbar=0"?> " target="_blank" ><?php echo $Nombre?></a></h5>
                                                   <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><b>Fecha publicacion: </b><?php echo $Fecha?></span>                                 
-                                                  <embed src="./<?php echo $Url."#toolbar=0"?> " style="width:290px; height:280px; "></embed>
+                                                  
                                                   
                                              </div>
                                         
@@ -123,10 +123,10 @@ https://templatemo.com/tm-516-known
                                    <div class="col-md-3 col-sm-6">
                                         <div class="team-thumb">
                                              <div class="team-image">
-                                                  <img src="./images/ARelacionados_4.png" class="img-responsive" alt="">
+                                                 
                                              </div>
                                              <div class="team-info">
-                                                  <h5 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Url?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <h5 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Url."#toolbar=0"?>" target="_blank"><?php echo $Nombre?></a></h5>
                                                   <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><b>Fecha publicacion: </b><?php echo $Fecha?></span>
                                              </div>
                                         
