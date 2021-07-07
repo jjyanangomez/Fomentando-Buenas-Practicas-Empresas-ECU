@@ -110,7 +110,7 @@ https://templatemo.com/tm-516-known
                                                   <img src="./images/pdf2.png" class="img-responsive" alt="" style="width: 170px; height: 170px">
                                              </div>
                                              <div class="team-info">
-                                                  <h5 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Archivo?>" target="_blank"><?php echo $Nombre?></a></h5>
+                                                  <h5 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Archivo."#toolbar=0"?>" target="_blank"><?php echo $Nombre?></a></h5>
                                                   <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><b>Fecha publicacion: </b><?php echo $Fecha?></span>
                                              </div>
                                         
