@@ -180,10 +180,11 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 20%;"><?php echo $Archivo?></td>
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-success" href="AdminitrarRecurso.php?id_Recurso=<?php echo $ID?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $Id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $ID ?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        
                                         <td class="col" style="width: 7%;"><a class="submit-btn form-control" style= background-color:#cfd4d7 target = "_black" href="./<?php echo  $Archivo; ?>" >Ver</a></td>
                                     </tr>
-                            <?php } ?>
+                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -283,8 +284,9 @@ https://templatemo.com/tm-516-known
           });  
      </script>
      <script type="text/javascript">
-        function preguntar(id){
+        function preguntar(id,urlAchivo){
             if(confirm("Esta seguro que desea Eliminar este Campo: ")){
+              
                 window.location.href = "dll/metodos.php?id_Recurso="+id+"&Eliminar";
             }
         }

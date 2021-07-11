@@ -84,8 +84,13 @@
 		
 		echo "Editar recurso";
 	}
-	if(isset($_GET["id_Recurso"]) && isset($_GET["Eliminar"])){
+	if(isset($_GET["id_Recurso"])  && isset($_GET["Eliminar"])){
 		$ID= $_GET["id_Recurso"];
+
+        $urlArchivo = $_GET["Archivo"];
+
+		
+
 		$envio1 = "DELETE FROM `recursos_digitales` WHERE IdRecurso_Digital= $ID";
 		$resultado1 = $conexion2->deleteConsulta($envio1);;
 		if(!$resultado1){
@@ -93,6 +98,18 @@
 		}else{
 			echo "Completado";
 		}
+
+		if(file_exists("../$urlArchivo")){
+			
+			if(unlink("../$urlArchivo")){
+                echo "archivo eliminado";
+			}else{
+				echo "archivo no se pudo eliminar";
+			}
+		}else{
+			echo "No encontro el archivo";
+		}
+
 		header("Location: ../AdminitrarRecurso.php");
 	}
 /*Infografias*/
@@ -137,6 +154,7 @@ if(isset($_GET["id_Infografia"]) && isset($_GET["Eliminar"])){
 	$iD= $_GET["id_Infografia"];
 	$envio2 = "DELETE FROM `recursos_infografia` WHERE id_recurso_infografia = $iD";
 	$resultado2 = $conexion3->deleteConsulta($envio2);
+	
 	if(!$resultado2){
 		die("Query Failed");
 	}else{

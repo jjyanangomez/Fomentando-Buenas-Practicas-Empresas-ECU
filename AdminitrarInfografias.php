@@ -197,7 +197,7 @@ https://templatemo.com/tm-516-known
                                         <td class="col" style="width: 15%;"><?php echo $Url?></td>
                                         <td class="col" style="width: 10%;"><?php echo $Fecha?></td>
                                         <td class="col" style="width: 7%;"><a class="btn btn-success" href="AdminitrarInfografias.php?id_Infografia=<?php echo $id?>&Editar"><img class="icono_pen" src="./images/pen.png" alt=""width="25%"></a></td>
-                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $Id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
+                                        <td class="col" style="width: 8%;"><a class="btn btn-danger" href="#" onclick="preguntar(<?php echo $id?>)"><img class = "icono_delete" src="./images/delete.png" alt=""width="25%"></a></td>
                                         <td class="col" style="width: 7%;"><a class="submit-btn form-control" style= background-color:#cfd4d7 target = "_black" href="./<?php echo  $Url; ?>" >Ver</a></td>
                                        
                                     </tr>
