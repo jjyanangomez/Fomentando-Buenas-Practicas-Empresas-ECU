@@ -189,5 +189,7 @@ if(isset($_GET["AgregarPersona"])){
     $json = json_decode($cadena,true);
     $row =$json["features"];
 	echo $row;
+	
  }
+
 ?>

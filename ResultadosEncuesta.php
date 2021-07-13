@@ -1,8 +1,15 @@
+<?php 
+     include("dll/obtenerjson.php");
+     $obtenerJson = new Encuesta();
+     include("dll/database.php");
+     $conexion = new Database();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-     <title>GALERIA VIDEOS</title>
+     <title>Resultado Encuesta</title>
 <!-- 
 
 Known Template 
@@ -28,6 +35,7 @@ https://templatemo.com/tm-516-known
 
      <!-- favicon -->
      <link rel="shortcut icon" href="images/logoGCOMPANY.png" type="image/x-icon">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.js"></script>
 
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -79,7 +87,308 @@ https://templatemo.com/tm-516-known
 
           </div>
      </section>
+      <!-- Resultado Encuesta -->
+      <section id="team">
+          <div class="container">
+               <div class="row">
 
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title">
+                              <h2>Videos<!--<small>Meet Professional Trainers</small>--></h2>
+                          
+                         </div>
+                    </div>
+                    <?php 
+                         $Indicadores = $conexion->readConsulta("SELECT * FROM Indicadores");
+                         while($row=mysqli_fetch_object($Indicadores)){
+                              $Id_ind=$row->Id_indicador;
+                              $Nombre_ind=$row->Nombre_Indicador;
+                              $Id_ind_ethos=$row->Id_indi_Ethos;
+                             ?>
+                              <div class="col-md-3 col-sm-6">
+                                   <div class="team-thumb">                       
+                                        <div class="team-info">
+                                            
+                                              <!-- <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                                                   <?php// echo $Id_ind;?> <p></p> <?php// echo $Nombre_ind?><p></p> <?php // echo $Id_ind_ethos?> </p>-->
+                                        </div>
+                                   
+                                   </div>
+                              </div>
+                    <?php } ?>  
+
+                    <?php 
+                         $i = 0; 
+                         $arrIndicadoresEthos = [];
+                         $IndicadoresEthos = $conexion->readConsulta("SELECT * FROM Indicadores_Ethos");
+                         while($row=mysqli_fetch_object($IndicadoresEthos)){
+                              $Id_Indi_Ethos=$row->Id_indi_Ethos;
+                              $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;
+
+                              $arrIndicadoresEthos[] = $Nombre_ind_Ethos;
+                              $i++;
+                             ?>
+                              <div class="col-md-3 col-sm-6">
+                                   <div class="team-thumb">                       
+                                        <div class="team-info">
+                                            
+                                            <!--   <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                                                 <?php  // echo $Id_Indi_Ethos;?> <p></p> <?php // echo $Nombre_ind_Ethos?><p></p>  </p> -->
+                                        </div>
+                                   
+                                   </div>
+                              </div>
+                    <?php } 
+                          var_dump($arrIndicadoresEthos);
+                          print_r($arrIndicadoresEthos);
+                          for ($i=0; $i < count($arrIndicadoresEthos); $i++) { 
+                              
+                          }
+                          echo $arrIndicadoresEthos[0];
+
+                           ?>  
+
+                    <?php 
+                    
+                   
+                         $SubIndicadores = $conexion->readConsulta("SELECT * FROM Sub_Indicadores");
+
+                         while($row=mysqli_fetch_object($SubIndicadores)){
+                              $Id_sub_indi=$row->Id_sub_indi;
+                              $Nombre_sub_indi=$row->Nombre_sub_indi;
+                              $Nombre_sub_alterno=$row->Nombre_sub_alterno;
+                              $Indicador_Encuesta=$row->Indicador_Encuesta;
+                              $Id_Indicador=$row->Id_Indicador;
+                              
+
+
+                            
+                   
+                              ?>
+
+                              <div class="col-md-3 col-sm-6">
+                                   <div class="team-thumb">                       
+                                        <div class="team-info">
+                                            
+                                             <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                                             <?php echo $Id_sub_indi;?> <p></p> <?php echo $Nombre_sub_indi?><p></p> <?php echo $Nombre_sub_alterno?> <p></p>
+                                              <?php echo $Indicador_Encuesta?> <p></p> <?php echo $Id_Indicador?></p>
+                                        </div>
+                                   
+                                   </div>
+                              </div>
+                    <?php }  
+                 
+                    ?>
+                    
+                    <canvas id="myChart" width="100" height="100"></canvas>
+                    <script>
+                         var ctx = document.getElementById('myChart').getContext('2d');
+                         var myChart = new Chart(ctx, {
+                              type: 'radar',
+                               data: {
+        labels: ['Micoempresa','Grande', 'Mediana', 'Pequeña'],
+        datasets: [{
+            label: 
+            "<?php echo $arrIndicadoresEthos[0]; ?>"
+            ,
+            data: [62, 80, 85, 93],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }, {
+            label: 
+            "<?php echo $arrIndicadoresEthos[1]; ?>"
+            ,
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 
+            "<?php echo $arrIndicadoresEthos[2]; ?>"
+            ,
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 
+            "<?php echo $arrIndicadoresEthos[3]; ?>"
+            ,
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        },{
+            label: 
+            "<?php echo $arrIndicadoresEthos[4]; ?>"
+            ,
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 
+            "<?php echo $arrIndicadoresEthos[5]; ?>"
+            ,
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 
+            "<?php echo $arrIndicadoresEthos[6]; ?>"
+            ,
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        ]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+
+
+                    
+                    <?php 
+                    $data = $obtenerJson -> leerJson();
+                    $datos = print_r($data, true);
+                    
+                    $obtenerJson -> ObtenerAtributos($data);
+
+                    //$obtenerJson->getObjectid() . "<br>";
+                    
+                    
+
+                   // print($datos);
+                   // echo $datos;
+
+                   /* for ($i=0; $i < sizeof($data); $i++) { 
+                   echo $data[$i]["attributes"]["objectid"],"<br>";
+                    } 
+                   */
+                    ?>
+          
+               
+               
+        
+
+               </div>
+
+          </div>
+     </section>
 
      <!-- FOOTER -->
      <footer id="footer">
@@ -145,6 +454,6 @@ https://templatemo.com/tm-516-known
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
-
+    
 </body>
 </html>
