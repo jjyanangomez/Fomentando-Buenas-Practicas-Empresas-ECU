@@ -102,17 +102,15 @@ https://templatemo.com/tm-516-known
                               $Extencion=$row->Extencion;
                               $Fecha=$row->Fecha_publicacion;
                               if ($Extencion == ".pdf"){?>
-                                   <div class="col-md-3 col-sm-6">
-                                        <div class="team-thumb">
+                                   <div class="col-md-6 col-sm-6">
+                                        <div class="team-thumb" style = "text-align: center;">
                                              <div class="team-image">
                                                  
                                              </div>
                                              <div class="team-info" >
-                                                  <embed src="./<?php echo $Url."#toolbar=0"?> " style="width:290px; height:280px; "></embed>
+                                                  <embed src="./<?php echo $Url."#toolbar=0"?> " style="width:350px; height:280px; "></embed>
                                                   <h5  style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a rel="stylesheet" href="./<?php echo $Url."#toolbar=0"?> " target="_blank" ><?php echo $Nombre?></a></h5>
                                                   <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><b>Fecha publicacion: </b><?php echo $Fecha?></span>                                 
-                                                  
-                                                  
                                              </div>
                                         
                                         </div>

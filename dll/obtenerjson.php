@@ -3,7 +3,8 @@
     //$conexion = new Database();
 class encuesta{
     private $objectid;
-    private $globalid; 
+    private $globalid;
+    private $Resultados;
    // private ;
 
   
@@ -46,18 +47,16 @@ class encuesta{
         return  $this -> objectid;
         //$this -> object1 = $objectid;
      } 
-     public function getIndicadoresEthos(){
+    public function getIndicadoresEthos(){
         return  $this -> indicadorEthos;
         //$this -> object1 = $objectid;
-     }  
-     public function setIndicadoresEthos($IndicaodresEthos){
+    } 
+     
+    public function setIndicadoresEthos($IndicaodresEthos){
         $this -> indicadorEthos = $IndicaodresEthos;
-     }
+    }
+
 
 };
     
-
-   
-  
-
 ?>

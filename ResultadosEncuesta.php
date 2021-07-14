@@ -3,6 +3,7 @@
      $obtenerJson = new Encuesta();
      include("dll/database.php");
      $conexion = new Database();
+     $URL = "https://survey123.arcgis.com/share/828a14a2074847899a525923a82b5b5e";
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ https://templatemo.com/tm-516-known
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.js"></script>
 
 </head>
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+<body onload ="openModelPDF('<?php echo $URL?>')" id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
      <!-- PRE LOADER -->
      <section class="preloader">
@@ -88,14 +89,67 @@ https://templatemo.com/tm-516-known
           </div>
      </section>
       <!-- Resultado Encuesta -->
-      <section id="team">
+      <section class = "card" id="team">
           <div class="container">
                <div class="row">
+                    <div class="modal fade" id="modalPdf" tabindex="-1" aria-labelledby="modalPdf" aria-hidden="true">
+                         <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                   <div class="modal-header">
+                                   <h5 class="modal-title" id="exampleModalLabel">Conteste la encuesta<br>Advertencia: No haga click fuera del cuadro blanco caso contrario se cerrara</h5>
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                   </button>
+                                   </div>
+                                   <div class="modal-body">
+                                   <iframe id="iframePDF" frameborder="0" width="100%" height="500px"></iframe>
+                                   </div>
+                                   <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>Resultado Encuesta<!--<small>Meet Professional Trainers</small>--></h2>
-                          
+                              <h2>Resultado Encuesta</h2>
+                              <div class="card-body">
+                                   <div class="row">
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart" width="100" height="100"></canvas>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart2" width="100" height="100"></canvas>
+>
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart3" width="100" height="100"></canvas>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart4" width="100" height="100"></canvas>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart5" width="100" height="100"></canvas>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart6" width="100" height="100"></canvas>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart7" width="100" height="100"></canvas>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <canvas id="myChart8" width="100" height="100"></canvas>
+
+                                        </div>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                     <?php 
@@ -679,6 +733,11 @@ var myChart8 = new Chart(ctx8, {
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
-    
+     <script>
+          function openModelPDF(url) {
+                                $('#modalPdf').modal('show');
+                                $('#iframePDF').attr('src',''+url);
+                            }
+     </script>
 </body>
 </html>

@@ -176,11 +176,11 @@ if(isset($_GET["AgregarPersona"])){
 	}else{
 		echo "Completado";
 	}
-	echo '<script type="text/javascript">
-		window.open("https://survey123.arcgis.com/share/828a14a2074847899a525923a82b5b5e","_blank");
-		location.href= "../index.php";
-		</script>';
-	//header("Location: ../index.php");
+	//echo '<script type="text/javascript">
+		//window.open("https://survey123.arcgis.com/share/828a14a2074847899a525923a82b5b5e","_blank");
+		//location.href= "../ResultadosEncuesta.php";
+		//</script>';
+	header("Location: ../ResultadosEncuesta.php");
 }
 
  /*Lectura de json*/

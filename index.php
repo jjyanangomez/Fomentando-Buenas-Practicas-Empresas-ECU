@@ -138,28 +138,28 @@ https://templatemo.com/tm-516-known
 
                     <div class="col-md-4 col-sm-4">
                          <div class="feature-thumb">
-                              <span>01</span>
+                              <span style = "background: #29ca8e;"><i class="fa fa-info"></i></span>
                               <!--<h3>Trending Courses</h3>-->
-                              <h3>Información General</h3>
-                              <p>Se podrá encontrar información general sobre las buenas prácticas de responsabilidad social en las empresas ecuatorianas.</p>
+                              <h3 class = "text-center">Información General</h3>
+                              <p class="text-justify">Se podrá encontrar información general sobre las buenas prácticas de responsabilidad social en las empresas ecuatorianas.</p>
                          </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4">
                          <div class="feature-thumb">
-                              <span>02</span>
+                              <span style = "background: #29ca8e;"><i class="fa fa-file-archive-o" ></i></span>
                               <!--<h3>Books & Library</h3>-->
-                              <h3>Encuesta</h3>
-                              <p>En esta sección se podrá realizar una encuesta para poder evaluar a su empresa con respecto al RCE.</p>
+                              <h3 class = "text-center">Encuesta</h3>
+                              <p class="text-justify">En esta sección se podrá realizar una encuesta para poder evaluar a su empresa con respecto al RCE.</p>
                          </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4">
                          <div class="feature-thumb">
-                              <span>03</span>
+                              <span style = "background: #29ca8e;"><i class="fa fa-bar-chart-o"></i></span>
                               <!--<h3>Certified Teachers</h3>-->
-                              <h3>Resultados</h3>
-                              <p>Una ves que se halla evaluado su empresa se presentara informacion referente a los restados.</p>
+                              <h3 class = "text-center">Resultados</h3>
+                              <p class="text-justify">Una ves que se halla evaluado su empresa se presentara informacion referente a los restados.</p>
                          </div>
                     </div>
 
@@ -194,7 +194,7 @@ https://templatemo.com/tm-516-known
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">INTRODUCCIÓN</a></h3>
-                                                  <p>El concepto de lo que hoy se conoce como Responsabilidad Social Corporativa (RSC) ha
+                                                  <p class="text-justify">El concepto de lo que hoy se conoce como Responsabilidad Social Corporativa (RSC) ha
                                                      evolucionado por diferentes causas y desde diferentes perspectivas: éticas, políticas,
                                                      instrumentales e integradoras, en la percepción del individuo y por tanto de la sociedad. Esto ha
                                                      fortalecido paulatinamente los argumentos para implementar la RSC en las organizaciones
@@ -229,7 +229,7 @@ https://templatemo.com/tm-516-known
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">IMPORTANCIA</a></h3>
-                                                  <p>El tema de la Responsabilidad Social es de gran importancia para la gestión y desarrollo de las
+                                                  <p class="text-justify">El tema de la Responsabilidad Social es de gran importancia para la gestión y desarrollo de las
                                                   empresas, por cuanto permite establecer lineamientos efectivos sobre el buen uso de recursos
                                                   en procura de un desarrollo saludable de las organizaciones y su entorno.</p>
                                              </div>
@@ -262,7 +262,7 @@ https://templatemo.com/tm-516-known
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">POTENCIAL DE LA INNOVACIÓN</a></h3>
-                                                  <p>Las empresas a través de la página web tendrán acceso al conocimiento de la RSE y podrán
+                                                  <p class="text-justify">Las empresas a través de la página web tendrán acceso al conocimiento de la RSE y podrán
                                                   autodianosticar su situación actual frente a la RSE, y se pondrá a su alcance varias estrategias
                                                   generales sobre RSE. El indicador de medición será el número de empresas que se
                                                   autodianóstiquen y visiten la página web.</p>
@@ -296,7 +296,7 @@ https://templatemo.com/tm-516-known
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">DESCRIPCIÓN DE LA PROPUESTA Y METODOLOGÍA</a></h3>
-                                                  <p>Considerando que el aprendizaje basado en proyectos consiste en una modalidad de enseñanza
+                                                  <p class="text-justify">Considerando que el aprendizaje basado en proyectos consiste en una modalidad de enseñanza
                                                   y aprendizaje centrada en tareas, un proceso compartido de negociación entre los participantes,
                                                   siendo su objetivo principal la obtención de un producto final. Este método promueve el
                                                   aprendizaje individual y autónomo dentro de un plan de trabajo definido por objetivos y
