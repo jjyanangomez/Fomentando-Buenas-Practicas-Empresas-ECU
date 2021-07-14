@@ -2,6 +2,16 @@
      include("dll/database.php");
      $conexion = new Database();
 ?>
+<?php 
+session_start();
+if ($_SESSION['autenticado'] && $_SESSION['Usuario']) {
+
+
+} else {
+     echo "<script>location.href='./index-login.html'</script>";
+
+}
+     ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
