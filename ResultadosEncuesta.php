@@ -111,10 +111,12 @@ https://templatemo.com/tm-516-known
                               </div>
                          </div>
                     </div>
+        
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
                               <h2>Resultado Encuesta</h2>
                               <div class="card-body">
+
                                    <div class="row">
                                         <div class="col-lg-6">
                                              <canvas id="myChart" width="100" height="100"></canvas>
@@ -244,21 +246,7 @@ https://templatemo.com/tm-516-known
                            ?>  
 
                    
-                    <canvas id="myChart" width="100" height="100"></canvas>
-
-                    <canvas id="myChart2" width="100" height="100"></canvas>
-
-                    <canvas id="myChart3" width="100" height="100"></canvas>
-
-                    <canvas id="myChart4" width="100" height="100"></canvas>
-
-                    <canvas id="myChart5" width="100" height="100"></canvas>
-
-                    <canvas id="myChart6" width="100" height="100"></canvas>
-
-                    <canvas id="myChart7" width="100" height="100"></canvas>
-
-                    <canvas id="myChart8" width="100" height="100"></canvas>
+                    
 
                  
                  
