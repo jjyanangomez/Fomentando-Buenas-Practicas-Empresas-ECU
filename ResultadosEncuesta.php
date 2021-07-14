@@ -99,11 +99,18 @@ https://templatemo.com/tm-516-known
                          </div>
                     </div>
                     <?php 
+
+                         $Indicadoresid = [];
+                         $IndicadoresNombres = [];
                          $Indicadores = $conexion->readConsulta("SELECT * FROM Indicadores");
                          while($row=mysqli_fetch_object($Indicadores)){
                               $Id_ind=$row->Id_indicador;
                               $Nombre_ind=$row->Nombre_Indicador;
                               $Id_ind_ethos=$row->Id_indi_Ethos;
+
+                               $Indicadoresid[] = $Id_ind_ethos;
+                               $IndicadoresNombres[] = $Nombre_ind;
+
                              ?>
                               <div class="col-md-3 col-sm-6">
                                    <div class="team-thumb">                       
@@ -118,15 +125,16 @@ https://templatemo.com/tm-516-known
                     <?php } ?>  
 
                     <?php 
-                         $i = 0; 
+                    
                          $arrIndicadoresEthos = [];
+                         $arrIndicadoresEthosID = [];
                          $IndicadoresEthos = $conexion->readConsulta("SELECT * FROM Indicadores_Ethos");
                          while($row=mysqli_fetch_object($IndicadoresEthos)){
                               $Id_Indi_Ethos=$row->Id_indi_Ethos;
-                              $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;
-
+                              $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;                             
+                              $arrIndicadoresEthosID[] = $Id_Indi_Ethos;
                               $arrIndicadoresEthos[] = $Nombre_ind_Ethos;
-                              $i++;
+                              
                              ?>
                               <div class="col-md-3 col-sm-6">
                                    <div class="team-thumb">                       
@@ -138,56 +146,102 @@ https://templatemo.com/tm-516-known
                                    
                                    </div>
                               </div>
-                    <?php } 
-                          var_dump($arrIndicadoresEthos);
-                          print_r($arrIndicadoresEthos);
-                          for ($i=0; $i < count($arrIndicadoresEthos); $i++) { 
-                              
-                          }
-                          echo $arrIndicadoresEthos[0];
-
-                           ?>  
+                   
 
                     <?php 
                     
-                   
                          $SubIndicadores = $conexion->readConsulta("SELECT * FROM Sub_Indicadores");
-
                          while($row=mysqli_fetch_object($SubIndicadores)){
                               $Id_sub_indi=$row->Id_sub_indi;
                               $Nombre_sub_indi=$row->Nombre_sub_indi;
                               $Nombre_sub_alterno=$row->Nombre_sub_alterno;
                               $Indicador_Encuesta=$row->Indicador_Encuesta;
-                              $Id_Indicador=$row->Id_Indicador;
-                              
-
-
-                            
-                   
+                              $Id_Indicador=$row->Id_Indicador;                                       
                               ?>
 
                               <div class="col-md-3 col-sm-6">
                                    <div class="team-thumb">                       
                                         <div class="team-info">
                                             
-                                             <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-                                             <?php echo $Id_sub_indi;?> <p></p> <?php echo $Nombre_sub_indi?><p></p> <?php echo $Nombre_sub_alterno?> <p></p>
-                                              <?php echo $Indicador_Encuesta?> <p></p> <?php echo $Id_Indicador?></p>
+                                           <!--   <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"> -->
+                                           <!--   <?php //echo $Id_sub_indi;?> <p></p> <?php //echo $Nombre_sub_indi?><p></p> <?php //echo $Nombre_sub_alterno?> <p></p>
+                                              <?php //echo $Indicador_Encuesta?> <p></p> <?php //echo $Id_Indicador?></p> -->
                                         </div>
                                    
                                    </div>
                               </div>
                     <?php }  
-                 
+                         }
                     ?>
+
+                    <?php 
+                     // var_dump("11111",$IndicadoresNombres);
+
+                    
+                     // var_dump("33333",$Indicadoresid);
+                     //  var_dump("22222",$arrIndicadoresEthosID);
+                    // echo $arrIndicadoresEthosID[0]; 
+                   
+                    /*$i = 0;
+                   
+                    while($Indicadoresid[$i] == "2" && $Indicadoresid[$i] == "2" ){
+
+
+                         echo $IndicadoresNombres[$i];
+
+                       $i++;
+                    }*/
+
+
+                    $labelIndicador1= [];
+                    $labelIndicador2 = [];
+                    $labelIndicador3 = [];
+                    $labelIndicador4 = [];
+                    $labelIndicador5 = [];
+                    $labelIndicador6 = [];
+                    $labelIndicador7 = [];
+                   
+                     for($i=0; $i < count($Indicadoresid); $i++){
+                        
+
+                    if($Indicadoresid[$i] == "1" && $Indicadoresid[$i] == "1"){                          
+                              $labelIndicador1[] = $IndicadoresNombres[$i];                                      
+                    }
+                    if($Indicadoresid[$i] == "2" && $Indicadoresid[$i] == "2"){                          
+                              $labelIndicador2[] = $IndicadoresNombres[$i];                                   
+                    }
+                    if($Indicadoresid[$i] == "3" && $Indicadoresid[$i] == "3"){                          
+                              $labelIndicador3[] = $IndicadoresNombres[$i];                                     
+                    }
+                    if($Indicadoresid[$i] == "4" && $Indicadoresid[$i] == "4"){                          
+                              $labelIndicador4[] = $IndicadoresNombres[$i];                                    
+                    }
+                    if($Indicadoresid[$i] == "5" && $Indicadoresid[$i] == "5"){                          
+                              $labelIndicador5[] = $IndicadoresNombres[$i];                                     
+                    }
+                    if($Indicadoresid[$i] == "6" && $Indicadoresid[$i] == "6"){                          
+                              $labelIndicador6[] = $IndicadoresNombres[$i];                                       
+                    }
+                    if($Indicadoresid[$i] == "7" && $Indicadoresid[$i] == "7"){                          
+                              $labelIndicador7[] = $IndicadoresNombres[$i];                                     
+                    }
+                     
+                     } 
+       
+                           ?>  
                     
                     <canvas id="myChart" width="100" height="100"></canvas>
                     <script>
+                         var label1=<?php echo json_encode($labelIndicador1);?>;
+                         var label2=<?php echo json_encode($labelIndicador2);?>;
+                        
+
                          var ctx = document.getElementById('myChart').getContext('2d');
                          var myChart = new Chart(ctx, {
                               type: 'radar',
                                data: {
-        labels: ['Micoempresa','Grande', 'Mediana', 'Pequeña'],
+        labels: label1,
+        labels1: label2,
         datasets: [{
             label: 
             "<?php echo $arrIndicadoresEthos[0]; ?>"
@@ -210,125 +264,11 @@ https://templatemo.com/tm-516-known
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-        }, {
+        },{
             label: 
             "<?php echo $arrIndicadoresEthos[1]; ?>"
             ,
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 
-            "<?php echo $arrIndicadoresEthos[2]; ?>"
-            ,
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 
-            "<?php echo $arrIndicadoresEthos[3]; ?>"
-            ,
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        },{
-            label: 
-            "<?php echo $arrIndicadoresEthos[4]; ?>"
-            ,
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 
-            "<?php echo $arrIndicadoresEthos[5]; ?>"
-            ,
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 
-            "<?php echo $arrIndicadoresEthos[6]; ?>"
-            ,
-            data: [12, 19, 3, 5, 2, 3],
+            data: [62, 80, 85, 93],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -347,8 +287,12 @@ https://templatemo.com/tm-516-known
             ],
             borderWidth: 1
         }
+        
         ]
+
+
     },
+    
     options: {
         scales: {
             y: {
