@@ -94,7 +94,7 @@ https://templatemo.com/tm-516-known
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>Videos<!--<small>Meet Professional Trainers</small>--></h2>
+                              <h2>Resultado Encuesta<!--<small>Meet Professional Trainers</small>--></h2>
                           
                          </div>
                     </div>
@@ -112,16 +112,7 @@ https://templatemo.com/tm-516-known
                                $IndicadoresNombres[] = $Nombre_ind;
 
                              ?>
-                              <div class="col-md-3 col-sm-6">
-                                   <div class="team-thumb">                       
-                                        <div class="team-info">
-                                            
-                                              <!-- <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-                                                   <?php// echo $Id_ind;?> <p></p> <?php// echo $Nombre_ind?><p></p> <?php // echo $Id_ind_ethos?> </p>-->
-                                        </div>
-                                   
-                                   </div>
-                              </div>
+                             
                     <?php } ?>  
 
                     <?php 
@@ -136,16 +127,7 @@ https://templatemo.com/tm-516-known
                               $arrIndicadoresEthos[] = $Nombre_ind_Ethos;
                               
                              ?>
-                              <div class="col-md-3 col-sm-6">
-                                   <div class="team-thumb">                       
-                                        <div class="team-info">
-                                            
-                                            <!--   <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-                                                 <?php  // echo $Id_Indi_Ethos;?> <p></p> <?php // echo $Nombre_ind_Ethos?><p></p>  </p> -->
-                                        </div>
-                                   
-                                   </div>
-                              </div>
+                             
                    
 
                     <?php 
@@ -159,39 +141,13 @@ https://templatemo.com/tm-516-known
                               $Id_Indicador=$row->Id_Indicador;                                       
                               ?>
 
-                              <div class="col-md-3 col-sm-6">
-                                   <div class="team-thumb">                       
-                                        <div class="team-info">
-                                            
-                                           <!--   <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"> -->
-                                           <!--   <?php //echo $Id_sub_indi;?> <p></p> <?php //echo $Nombre_sub_indi?><p></p> <?php //echo $Nombre_sub_alterno?> <p></p>
-                                              <?php //echo $Indicador_Encuesta?> <p></p> <?php //echo $Id_Indicador?></p> -->
-                                        </div>
-                                   
-                                   </div>
-                              </div>
+                              
                     <?php }  
                          }
                     ?>
 
                     <?php 
-                     // var_dump("11111",$IndicadoresNombres);
-
                     
-                     // var_dump("33333",$Indicadoresid);
-                     //  var_dump("22222",$arrIndicadoresEthosID);
-                    // echo $arrIndicadoresEthosID[0]; 
-                   
-                    /*$i = 0;
-                   
-                    while($Indicadoresid[$i] == "2" && $Indicadoresid[$i] == "2" ){
-
-
-                         echo $IndicadoresNombres[$i];
-
-                       $i++;
-                    }*/
-
 
                     $labelIndicador1= [];
                     $labelIndicador2 = [];
@@ -200,6 +156,7 @@ https://templatemo.com/tm-516-known
                     $labelIndicador5 = [];
                     $labelIndicador6 = [];
                     $labelIndicador7 = [];
+                    $labelIndicador8 = [];
                    
                      for($i=0; $i < count($Indicadoresid); $i++){
                         
@@ -225,24 +182,60 @@ https://templatemo.com/tm-516-known
                     if($Indicadoresid[$i] == "7" && $Indicadoresid[$i] == "7"){                          
                               $labelIndicador7[] = $IndicadoresNombres[$i];                                     
                     }
+                    if($Indicadoresid[$i] == "8" && $Indicadoresid[$i] == "8"){                          
+                         $labelIndicador8[] = $IndicadoresNombres[$i];                                     
+                    }
                      
                      } 
-       
                            ?>  
-                    
+
+                   
                     <canvas id="myChart" width="100" height="100"></canvas>
-                    <script>
+
+                    <canvas id="myChart2" width="100" height="100"></canvas>
+
+                    <canvas id="myChart3" width="100" height="100"></canvas>
+
+                    <canvas id="myChart4" width="100" height="100"></canvas>
+
+                    <canvas id="myChart5" width="100" height="100"></canvas>
+
+                    <canvas id="myChart6" width="100" height="100"></canvas>
+
+                    <canvas id="myChart7" width="100" height="100"></canvas>
+
+                    <canvas id="myChart8" width="100" height="100"></canvas>
+
+                 
+                 
+                 <script>
                          var label1=<?php echo json_encode($labelIndicador1);?>;
                          var label2=<?php echo json_encode($labelIndicador2);?>;
-                        
+                         var label3=<?php echo json_encode($labelIndicador3);?>;
+                         var label4=<?php echo json_encode($labelIndicador4);?>;
+                         var label5=<?php echo json_encode($labelIndicador5);?>;
+                         var label6=<?php echo json_encode($labelIndicador6);?>;
+                         var label7=<?php echo json_encode($labelIndicador7);?>;
+                         var label8=<?php echo json_encode($labelIndicador8);?>;
+
 
                          var ctx = document.getElementById('myChart').getContext('2d');
+                         var ctx2 = document.getElementById('myChart2').getContext('2d');
+                         var ctx3 = document.getElementById('myChart3').getContext('2d');
+                         var ctx4 = document.getElementById('myChart4').getContext('2d');
+                         var ctx5 = document.getElementById('myChart5').getContext('2d');
+                         var ctx6 = document.getElementById('myChart6').getContext('2d');
+                         var ctx7 = document.getElementById('myChart7').getContext('2d');
+                         var ctx8 = document.getElementById('myChart8').getContext('2d');
+
+
                          var myChart = new Chart(ctx, {
                               type: 'radar',
                                data: {
-        labels: label1,
-        labels1: label2,
+       
+         labels: label1, 
         datasets: [{
+           
             label: 
             "<?php echo $arrIndicadoresEthos[0]; ?>"
             ,
@@ -264,7 +257,30 @@ https://templatemo.com/tm-516-known
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-        },{
+        }
+        
+        ]
+
+
+    },
+    
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+var myChart2 = new Chart(ctx2, {
+                              type: 'radar',
+                               data: {
+       
+         labels: label2, 
+        datasets: [{
+           
             label: 
             "<?php echo $arrIndicadoresEthos[1]; ?>"
             ,
@@ -301,6 +317,271 @@ https://templatemo.com/tm-516-known
         }
     }
 });
+
+var myChart3 = new Chart(ctx3, {
+                              type: 'radar',
+                               data: {
+       
+         labels: label3, 
+        datasets: [{
+           
+            label: 
+            "<?php echo $arrIndicadoresEthos[2]; ?>"
+            ,
+            data: [62, 80, 85, 93],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        
+        ]
+
+
+    },
+    
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+var myChart4 = new Chart(ctx4, {
+                              type: 'radar',
+                               data: {
+       
+         labels: label4, 
+        datasets: [{
+           
+            label: 
+            "<?php echo $arrIndicadoresEthos[3]; ?>"
+            ,
+            data: [62, 80, 85, 93],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        
+        ]
+
+
+    },
+    
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+var myChart5 = new Chart(ctx5, {
+                              type: 'radar',
+                               data: {
+       
+         labels: label5, 
+        datasets: [{
+           
+            label: 
+            "<?php echo $arrIndicadoresEthos[4]; ?>"
+            ,
+            data: [62, 80, 85, 93],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        
+        ]
+
+
+    },
+    
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+var myChart6 = new Chart(ctx6, {
+                              type: 'radar',
+                               data: {
+       
+         labels: label6, 
+        datasets: [{
+           
+            label: 
+            "<?php echo $arrIndicadoresEthos[5]; ?>"
+            ,
+            data: [62, 80, 85, 93],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        
+        ]
+
+
+    },
+    
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+var myChart7 = new Chart(ctx7, {
+                              type: 'radar',
+                               data: {
+       
+         labels: label7, 
+        datasets: [{
+           
+            label: 
+            "<?php echo $arrIndicadoresEthos[6]; ?>"
+            ,
+            data: [62, 80, 85, 93],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        
+        ]
+
+
+    },
+    
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+var myChart8 = new Chart(ctx8, {
+                              type: 'radar',
+                               data: {
+       
+         labels: label8, 
+        datasets: [{
+           
+            label: 
+            "<?php echo $arrIndicadoresEthos[7]; ?>"
+            ,
+            data: [62, 80, 85, 93],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }
+        
+        ]
+
+
+    },
+    
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
 </script>
 
 
