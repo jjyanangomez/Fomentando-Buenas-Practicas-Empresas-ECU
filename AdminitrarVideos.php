@@ -76,6 +76,7 @@ https://templatemo.com/tm-516-known
                          <li><a href="./AdminitrarInfografias.php" class="smoothScroll">Infografias</a></li>
                        <!--  <li><a href="#testimonial" class="smoothScroll">Reviews</a></li> -->
                          <li><a href="./AdminitrarRecurso.php" class="smoothScroll">Recursos</a></li>
+                         <li><a href="./AdministrarUsuarios.php" class="smoothScroll">Usuarios</a></li>
                     </ul>
 
                     <ul class=" navbar-right" style="margin-top: 16px">

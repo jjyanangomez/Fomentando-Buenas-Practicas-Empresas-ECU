@@ -191,5 +191,50 @@ if(isset($_GET["AgregarPersona"])){
 	echo $row;
 	
  }
+ /*usuarios de encuesta*/
 
+if(isset($_POST["AgregarUsuario"])){
+		$NombreEmpresa = $_POST["NombreEmpresa"];
+		$NombreRepresentante = $_POST["NombreRepresentante"];
+		$Ruc = $_POST["Ruc"];
+		$Correo = $_POST["correo"];
+		$CantonUsu = (int)$_POST["Canton"];
+		$envio = "INSERT INTO `cliente`(Nombre_Empresa, Nombre_Representante, RUC, Email, IdCanton) VALUES ('$NombreEmpresa','$NombreRepresentante','$Ruc','$Correo','$CantonUsu')";
+		$resultado = $conexion->InsertConsulta($envio);
+		if(!$resultado){
+			die("Query Failed");
+		}else{
+			echo "Completado";
+		}
+		header("Location: ../AdministrarUsuarios.php");
+	}
+	if(isset($_GET["id_Usuario"]) && isset($_GET["EliminarUsuario"])){
+		$id= $_GET["id_Usuario"];
+		$envio = "DELETE FROM `cliente` WHERE id_Cliente= $id";
+		$resultado = $conexion->deleteConsulta($envio);;
+		if(!$resultado){
+			die("Query Failed");
+		}else{
+			echo "Completado";
+		}
+		header("Location: ../AdministrarUsuarios.php");
+	}
+	if(isset($_POST["ActualizarUsuario"])){
+		$id = $_GET["id"];
+		$NombreEmpresa = $_POST["NombreEmpresa"];
+		$NombreRepresentante = $_POST["NombreRepresentante"];
+		$Ruc = $_POST["Ruc"];
+		$Correo = $_POST["correo"];
+		$CantonUsu = (int)$_POST["Canton"];
+		$envio = "UPDATE `cliente` SET `Nombre_Empresa`='$NombreEmpresa',`Nombre_Representante`='$NombreRepresentante',`RUC`='$Ruc',`Email`='$Correo',`IdCanton`='$CantonUsu' WHERE id_Cliente = $id";
+		$resultado = $conexion->updateConsulta($envio);
+		if(!$resultado){
+			echo $envio;
+			die("Query Failed");
+			
+		}else{
+			echo "Completado";
+		}
+		header("Location: ../AdministrarUsuarios.php");
+	}
 ?>
