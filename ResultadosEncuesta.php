@@ -625,33 +625,37 @@ var myChart8 = new Chart(ctx8, {
 });
 
 </script>
-
-
-
-                    
+         
                     <?php 
                     $data = $obtenerJson -> leerJson();
-                    $datos = print_r($data, true);
-                    
+                    $datos = print_r($data, true);                  
                     $obtenerJson -> ObtenerAtributos($data);
-
                     //$obtenerJson->getObjectid() . "<br>";
                     
-                    
-
                    // print($datos);
-                   // echo $datos;
+                    //echo $datos;
 
                    /* for ($i=0; $i < sizeof($data); $i++) { 
                    echo $data[$i]["attributes"]["objectid"],"<br>";
                     } 
                    */
-                    ?>
-          
-               
-               
-        
+                    ?> 
 
+                    <script>
+
+                        var arreglo=<?php echo json_encode($datos);?>; 
+                       
+
+                    console.log(arreglo);
+                    
+
+
+
+                    
+
+
+                    </script>        
+            
                </div>
 
           </div>
