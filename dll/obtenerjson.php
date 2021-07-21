@@ -31,9 +31,9 @@ class encuesta{
            
             //setObjectid($row[$i]["attributes"]["objectid"],"<br>");
              
-            //echo $row[$i]["domain"]["cvd__1_aplica_la_responsabilidad_so"],"<br>";
+         //echo $row[$i]["domain"]["cvd__1_aplica_la_responsabilidad_so"],"<br>";
          //   echo $row[$i]["attributes"]["globalid"],"<br>";
-            echo $row[$i]["attributes"]["Creator"],"<br>";
+           echo $row[$i]["attributes"]["Creator"],"<br>";
             
          }
        
