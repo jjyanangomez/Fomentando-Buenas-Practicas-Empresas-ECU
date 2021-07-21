@@ -199,13 +199,13 @@ https://templatemo.com/tm-516-known
                         <thead class="thead-dark" style=" margin:0 !important; background-color:#9dc15b; font-weight:bold;">
                             <tr style="margin:0 !important; font-weight:bold;">
                                 <th class="col" style="width: 3%;">ID</th>
-                                <th class="col" style="width: 15%;">Nombre Empresa</th>
+                                <th class="col" style="width: 20%;">Nombre Empresa</th>
                                 <th class="col" style="width: 15%;">Nombre Representante</th>
-                                <th class="col" style="width: 10%;">Ruc</th>
+                                <th class="col" style="width: 15%;">Ruc</th>
                                 <th class="col" style="width: 15%;">Correo</th>
-                                <th class="col" style="width: 10%;">Cantón</th>
-                                <th class="col" style="width: 7%;">Editar</th>
-                                <th class="col" style="width: 7%;">Eliminar</th>
+                                <th class="col" style="width: 16%;">Cantón</th>
+                                <th class="col" style="width: 10%;">Editar</th>
+                                <th class="col" style="width: 10%;">Eliminar</th>
                                 
                             </tr>
                         </thead>

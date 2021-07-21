@@ -118,7 +118,7 @@ https://templatemo.com/tm-516-known
                               <div class="caption">
                                    <div class="container">
                                         <div class="col-md-6 col-sm-12"></div>
-                                             <h1>Puede evaluar su empresa de acuerdo a la RCE</h1>
+                                             <h1>Puede evaluar su empresa de acuerdo a la RSE</h1>
                                              <h3>Puedes obtener ayuda de acuerdo a los resultados de la encuesta realizada</h3>
                                              <!--<h3>enatis sollicitudin ut at libero. Visit <a rel="nofollow" href="https://www.facebook.com/templatemo">templatemo</a> page.</h3>-->
                                              <a href="#contact" class="section-btn btn btn-default smoothScroll">Dudas o sugerencias</a>
@@ -137,7 +137,7 @@ https://templatemo.com/tm-516-known
                <div class="row">
 
                     <div class="col-md-4 col-sm-4">
-                         <div class="feature-thumb">
+                         <div class="feature-thumb" style="text-align: center;">
                               <span style = "background: #29ca8e;"><i class="fa fa-info"></i></span>
                               <!--<h3>Trending Courses</h3>-->
                               <h3 class = "text-center">Información General</h3>
@@ -146,7 +146,7 @@ https://templatemo.com/tm-516-known
                     </div>
 
                     <div class="col-md-4 col-sm-4">
-                         <div class="feature-thumb">
+                         <div class="feature-thumb"style="text-align: center;">
                               <span style = "background: #29ca8e;"><i class="fa fa-file-archive-o" ></i></span>
                               <!--<h3>Books & Library</h3>-->
                               <h3 class = "text-center">Encuesta</h3>
@@ -155,7 +155,7 @@ https://templatemo.com/tm-516-known
                     </div>
 
                     <div class="col-md-4 col-sm-4">
-                         <div class="feature-thumb">
+                         <div class="feature-thumb" style="text-align: center;">
                               <span style = "background: #29ca8e;"><i class="fa fa-bar-chart-o"></i></span>
                               <!--<h3>Certified Teachers</h3>-->
                               <h3 class = "text-center">Resultados</h3>

@@ -114,7 +114,8 @@ https://templatemo.com/tm-516-known
         
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>Resultado Encuesta</h2>
+                              <h2>Resultado Encuesta ADEC-ETHOS</h2>
+                              <p class="text-justify">Los Indicadores ADEC-ETHOS son una herramienta de aprendizaje y evaluación de la gestión de las empresas que refieren a la incorporación de prácticas de responsabilidad social, al planeamiento estratégico, al monitoreo y desempeño general en la empresa.</p>
                               <div class="card-body">
 
                                    <div class="row">
