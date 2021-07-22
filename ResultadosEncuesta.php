@@ -252,14 +252,14 @@ https://templatemo.com/tm-516-known
                                 $Indicadoresid_aux[] = $Id_ind;
                                 //echo $Nombre_ind;
                             }
-                            echo sizeof($Indicadoresid_aux),"<br>";
-                            echo $arrIndicadoresEthosID_aux[0],"--<br>";
-                            echo $Indicadoresid_aux[0],"--<br>";
+                            //echo sizeof($Indicadoresid_aux),"<br>";
+                            //echo $arrIndicadoresEthosID_aux[0],"--<br>";
+                            //echo $Indicadoresid_aux[0],"--<br>";
                             $Nombre_sub_alternoArr = [];
                             for ($k=0; $k < sizeof($Indicadoresid_aux) ; $k++) {
                                 $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID_aux[$j] AND i.Id_indicador = $Indicadoresid_aux[$k]";
                                 $SubIndicadores_Prueba = $conexion->readConsulta($sql);
-                                //echo $sql;
+                                ////echo $sql;
                                 while($row=mysqli_fetch_object($SubIndicadores_Prueba)){
                                     $Id_sub_indi=$row->Id_sub_indi;
                                     $Nombre_sub_indi=$row->Nombre_sub_indi;
@@ -268,17 +268,17 @@ https://templatemo.com/tm-516-known
                                     $Id_Indicador=$row->Id_Indicador;
                                     $Nombre_sub_alternoArr[] = $Nombre_sub_alterno;
                                 }
-                                echo "--------ETHOS---$arrIndicadoresEthosID_aux[$j]----------------<br>";
+                                //echo "--------ETHOS---$arrIndicadoresEthosID_aux[$j]----------------<br>";
                                 for ($l=0; $l < sizeof($Nombre_sub_alternoArr) ; $l++) { 
-                                    echo $Nombre_sub_alternoArr[$l],"<br>";
+                                    //echo $Nombre_sub_alternoArr[$l],"<br>";
                                     if($row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si" || $row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si_"){
                                         $contIndi=$contIndi+1;
                                     }
                                 }
                                 $valor = 100/sizeof($Nombre_sub_alternoArr);
                                 $aux = $contIndi*$valor;
-                                echo $contIndi,"<br>";
-                                echo "Porcentaje: $aux","<br>";
+                                //echo $contIndi,"<br>";
+                                //echo "Porcentaje: $aux","<br>";
                                 $arrayAux[] = $aux;
                                 $Nombre_sub_alternoArr = array_diff($Nombre_sub_alternoArr,$Nombre_sub_alternoArr);
                                 $contIndi=0;
@@ -288,8 +288,8 @@ https://templatemo.com/tm-516-known
                             $Indicadoresid_aux = array_diff($Indicadoresid_aux,$Indicadoresid_aux);
                         }
                         $array = $row1[$numero]["attributes"]["_2_ruc"];
-                        echo $array,"<br>";
-                        echo $row1[$numero]["attributes"]["_1_aplica_la_responsabilidad_so"],"<br>";
+                        //echo $array,"<br>";
+                        //echo $row1[$numero]["attributes"]["_1_aplica_la_responsabilidad_so"],"<br>";
                         $dataIndicador1= [];
                         $dataIndicador2= [];
                         $dataIndicador3= [];
@@ -404,7 +404,7 @@ https://templatemo.com/tm-516-known
                          var datas6=<?php echo json_encode($dataIndicador6);?>;
                          var datas7=<?php echo json_encode($dataIndicador7);?>;
                          
-
+                        console.log(datas4);
 
                          var ctx = document.getElementById('myChart').getContext('2d');
                          var ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -559,7 +559,7 @@ var myChart4 = new Chart(ctx4, {
             label: 
             "<?php echo $arrIndicadoresEthos[3]; ?>"
             ,
-            data: data4,
+            data: datas4,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -603,7 +603,7 @@ var myChart5 = new Chart(ctx5, {
             label: 
             "<?php echo $arrIndicadoresEthos[4]; ?>"
             ,
-            data: data5,
+            data: datas5,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -647,7 +647,7 @@ var myChart6 = new Chart(ctx6, {
             label: 
             "<?php echo $arrIndicadoresEthos[5]; ?>"
             ,
-            data: data6,
+            data: datas6,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -691,7 +691,7 @@ var myChart7 = new Chart(ctx7, {
             label: 
             "<?php echo $arrIndicadoresEthos[6]; ?>"
             ,
-            data: data7,
+            data: datas7,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -724,51 +724,6 @@ var myChart7 = new Chart(ctx7, {
         }
     }
 });
-
-var myChart8 = new Chart(ctx8, {
-                              type: 'radar',
-                               data: {
-       
-         labels: label8, 
-        datasets: [{
-           
-            label: 
-            "<?php echo $arrIndicadoresEthos[7]; ?>"
-            ,
-            data: [62, 80, 85, 93],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }
-        
-        ]
-
-
-    },
-    
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
 </script>
          
                     <?php 
