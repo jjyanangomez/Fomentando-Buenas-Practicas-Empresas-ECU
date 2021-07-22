@@ -107,9 +107,9 @@ https://templatemo.com/tm-516-known
             $Indicadores = $conexion->readConsulta("SELECT * FROM Indicadores");
             $IndicadoresEthos = $conexion->readConsulta("SELECT * FROM Indicadores_Ethos");
             $SubIndicadores = $conexion->readConsulta("SELECT * FROM Sub_Indicadores");
-            $contEthos = 0;
             $contIndi = 0;
-            $contSubIndi = 0;
+            $arrayGeneral = [];
+            $arrayAux = [];
             while($row=mysqli_fetch_object($IndicadoresEthos)){
                 $Id_Indi_Ethos=$row->Id_indi_Ethos;
                 $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;                             
@@ -117,7 +117,7 @@ https://templatemo.com/tm-516-known
             }
             
             for ($j=0; $j < sizeof($arrIndicadoresEthosID)-1 ; $j++) { 
-                $SubIndi_ethos = $conexion->readConsulta("SELECT * FROM Indicadores WHERE Id_indi_Ethos = $arrIndicadoresEthosID[0]");
+                $SubIndi_ethos = $conexion->readConsulta("SELECT * FROM Indicadores WHERE Id_indi_Ethos = $arrIndicadoresEthosID[$j]");
                 while($row=mysqli_fetch_object($SubIndi_ethos)){
                     $Id_ind=$row->Id_indicador;
                     $Nombre_ind=$row->Nombre_Indicador;
@@ -130,7 +130,7 @@ https://templatemo.com/tm-516-known
                 echo $Indicadoresid[0],"--<br>";
                 $Nombre_sub_alternoArr = [];
                 for ($k=0; $k < sizeof($Indicadoresid) ; $k++) {
-                    $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID[0] AND i.Id_indicador = $Indicadoresid[$k]";
+                    $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID[$j] AND i.Id_indicador = $Indicadoresid[$k]";
                     $SubIndicadores_Prueba = $conexion->readConsulta($sql);
                     //echo $sql;
                     while($row=mysqli_fetch_object($SubIndicadores_Prueba)){
@@ -141,6 +141,7 @@ https://templatemo.com/tm-516-known
                         $Id_Indicador=$row->Id_Indicador;
                         $Nombre_sub_alternoArr[] = $Nombre_sub_alterno;
                     }
+                    echo "--------ETHOS---$arrIndicadoresEthosID[$j]----------------<br>";
                     for ($l=0; $l < sizeof($Nombre_sub_alternoArr) ; $l++) { 
                         echo $Nombre_sub_alternoArr[$l],"<br>";
                         if($row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si" || $row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si_"){
@@ -150,15 +151,21 @@ https://templatemo.com/tm-516-known
                     $valor = 100/sizeof($Nombre_sub_alternoArr);
                     $aux = $contIndi*$valor;
                     echo $contIndi,"<br>";
-                    echo $aux,"<br>";
+                    echo "Porcentaje: $aux","<br>";
+                    $arrayAux[] = $aux;
                     $Nombre_sub_alternoArr = array_diff($Nombre_sub_alternoArr,$Nombre_sub_alternoArr);
                     $contIndi=0;
                 }
-                break;
+                $arrayGeneral[] = $arrayAux;
+                $arrayAux = array_diff($arrayAux,$arrayAux);
+                $Indicadoresid = array_diff($Indicadoresid,$Indicadoresid);
             }
             $array = $row1[$numero]["attributes"]["_2_ruc"];
             echo $array,"<br>";
             echo $row1[$numero]["attributes"]["_1_aplica_la_responsabilidad_so"],"<br>";
+            for ($i=0; $i < sizeof($arrayGeneral); $i++) { 
+                echo $arrayGeneral[$i][0],"<br>";
+            }
         ?>
 
      </section>
