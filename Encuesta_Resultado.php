@@ -99,6 +99,7 @@ https://templatemo.com/tm-516-known
             for ($i=0; $i < sizeof($row1); $i++) {
                 if(1790864316001 == $row1[$i]["attributes"]["_2_ruc"]){
                     $numero = $i;
+                    break;
                 }
 
                 //echo $row[$i]["attributes"]["objectid"],"<br>";
@@ -106,10 +107,51 @@ https://templatemo.com/tm-516-known
             $Indicadores = $conexion->readConsulta("SELECT * FROM Indicadores");
             $IndicadoresEthos = $conexion->readConsulta("SELECT * FROM Indicadores_Ethos");
             $SubIndicadores = $conexion->readConsulta("SELECT * FROM Sub_Indicadores");
-            $SubIndi_ = $conexion->readConsulta("SELECT * FROM Sub_Indicadores");
+            $contEthos = 0;
+            $contIndi = 0;
+            $contSubIndi = 0;
+            while($row=mysqli_fetch_object($IndicadoresEthos)){
+                $Id_Indi_Ethos=$row->Id_indi_Ethos;
+                $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;                             
+                $arrIndicadoresEthosID[] = $Id_Indi_Ethos;
+            }
             
-            while($row=mysqli_fetch_object($Indicadores)){
-                
+            for ($j=0; $j < sizeof($arrIndicadoresEthosID)-1 ; $j++) { 
+                $SubIndi_ethos = $conexion->readConsulta("SELECT * FROM Indicadores WHERE Id_indi_Ethos = $arrIndicadoresEthosID[0]");
+                while($row=mysqli_fetch_object($SubIndi_ethos)){
+                    $Id_ind=$row->Id_indicador;
+                    $Nombre_ind=$row->Nombre_Indicador;
+                    $Id_ind_ethos=$row->Id_indi_Ethos;
+                    $Indicadoresid[] = $Id_ind;
+                    //echo $Nombre_ind;
+                }
+                echo sizeof($Indicadoresid),"<br>";
+                echo $arrIndicadoresEthosID[0],"--<br>";
+                echo $Indicadoresid[0],"--<br>";
+                for ($k=0; $k < sizeof($Indicadoresid) ; $k++) {
+                    $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID[0] AND i.Id_indicador = $Indicadoresid[0]";
+                    $SubIndicadores_Prueba = $conexion->readConsulta($sql);
+                    //echo $sql;
+                    while($row=mysqli_fetch_object($SubIndicadores_Prueba)){
+                        $Id_sub_indi=$row->Id_sub_indi;
+                        $Nombre_sub_indi=$row->Nombre_sub_indi;
+                        $Nombre_sub_alterno=$row->Nombre_sub_alterno;
+                        $Indicador_Encuesta=$row->Indicador_Encuesta;
+                        $Id_Indicador=$row->Id_Indicador;
+                        $Nombre_sub_alternoArr[] = $Nombre_sub_alterno;
+                    }
+                    for ($l=0; $l < sizeof($Nombre_sub_alternoArr) ; $l++) { 
+                        echo $Nombre_sub_alternoArr[$l],"<br>";
+                        if($row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si" || $row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si_"){
+                            $contIndi=$contIndi+1;
+                        }
+                    }
+                    $valor = 100/sizeof($Nombre_sub_alternoArr);
+                    $aux = $contIndi*$valor;
+                    echo $contIndi,"<br>";
+                    echo $aux,"<br>";
+                }
+                break;
             }
             $array = $row1[$numero]["attributes"]["_2_ruc"];
             echo $array,"<br>";
