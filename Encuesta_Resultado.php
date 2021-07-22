@@ -128,8 +128,9 @@ https://templatemo.com/tm-516-known
                 echo sizeof($Indicadoresid),"<br>";
                 echo $arrIndicadoresEthosID[0],"--<br>";
                 echo $Indicadoresid[0],"--<br>";
+                $Nombre_sub_alternoArr = [];
                 for ($k=0; $k < sizeof($Indicadoresid) ; $k++) {
-                    $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID[0] AND i.Id_indicador = $Indicadoresid[0]";
+                    $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID[0] AND i.Id_indicador = $Indicadoresid[$k]";
                     $SubIndicadores_Prueba = $conexion->readConsulta($sql);
                     //echo $sql;
                     while($row=mysqli_fetch_object($SubIndicadores_Prueba)){
@@ -150,6 +151,8 @@ https://templatemo.com/tm-516-known
                     $aux = $contIndi*$valor;
                     echo $contIndi,"<br>";
                     echo $aux,"<br>";
+                    $Nombre_sub_alternoArr = array_diff($Nombre_sub_alternoArr,$Nombre_sub_alternoArr);
+                    $contIndi=0;
                 }
                 break;
             }
