@@ -93,11 +93,12 @@ https://templatemo.com/tm-516-known
           <div class="container">
                <div class="row">
                     <div class="modal fade" id="modalPdf" tabindex="-1" aria-labelledby="modalPdf" aria-hidden="true">
-                         <div class="modal-dialog modal-lg">
+                         <div class="modal-dialog modal-lg" style="width: 95%;">
                               <div class="modal-content">
                                    <div class="modal-header">
-                                   <h5 class="modal-title" id="exampleModalLabel">Conteste la encuesta<br>Advertencia: No haga click fuera del cuadro blanco caso contrario se cerrara</h5>
-                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                   <h3 class="modal-title" id="exampleModalLabel">Encuesta-Indicadores de responsabilidad social empresarial</h3>
+                                   <p>Advertencia: No haga click fuera del cuadro blanco caso contrario se cerrara</p>
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: xx-large; margin-top: -56px; margin-right: 10px;">
                                         <span aria-hidden="true">&times;</span>
                                    </button>
                                    </div>
@@ -196,12 +197,12 @@ https://templatemo.com/tm-516-known
                     <?php 
                     
                          $arrIndicadoresEthos = [];
-                         $arrIndicadoresEthosID = [];
+                         $arrIndicadoresEthosID_aux = [];
                          $IndicadoresEthos = $conexion->readConsulta("SELECT * FROM Indicadores_Ethos");
                          while($row=mysqli_fetch_object($IndicadoresEthos)){
                               $Id_Indi_Ethos=$row->Id_indi_Ethos;
                               $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;                             
-                              $arrIndicadoresEthosID[] = $Id_Indi_Ethos;
+                              $arrIndicadoresEthosID_aux[] = $Id_Indi_Ethos;
                               $arrIndicadoresEthos[] = $Nombre_ind_Ethos;
                               
                              ?>
@@ -223,7 +224,76 @@ https://templatemo.com/tm-516-known
                     <?php }  
                          }
                     ?>
-
+                    <!-- Lectura del json obtencion de datos y analisis del mismo -->
+                    <?php
+                        $row1 = $obtenerJson -> leerJson();
+                        $numero = 0;
+                        for ($i=0; $i < sizeof($row1); $i++) {
+                            if(1790864316001 == $row1[$i]["attributes"]["_2_ruc"]){
+                                $numero = $i;
+                                break;
+                            }
+                        }
+                        $contIndi = 0;
+                        $arrayGeneral = [];
+                        $arrayAux = [];
+                        while($row=mysqli_fetch_object($IndicadoresEthos)){
+                            $Id_Indi_Ethos=$row->Id_indi_Ethos;
+                            $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;                             
+                            $arrIndicadoresEthosID_aux[] = $Id_Indi_Ethos;
+                        }
+                        
+                        for ($j=0; $j < sizeof($arrIndicadoresEthosID_aux)-1 ; $j++) { 
+                            $SubIndi_ethos = $conexion->readConsulta("SELECT * FROM Indicadores WHERE Id_indi_Ethos = $arrIndicadoresEthosID_aux[$j]");
+                            while($row=mysqli_fetch_object($SubIndi_ethos)){
+                                $Id_ind=$row->Id_indicador;
+                                $Nombre_ind=$row->Nombre_Indicador;
+                                $Id_ind_ethos=$row->Id_indi_Ethos;
+                                $Indicadoresid_aux[] = $Id_ind;
+                                //echo $Nombre_ind;
+                            }
+                            echo sizeof($Indicadoresid_aux),"<br>";
+                            echo $arrIndicadoresEthosID_aux[0],"--<br>";
+                            echo $Indicadoresid_aux[0],"--<br>";
+                            $Nombre_sub_alternoArr = [];
+                            for ($k=0; $k < sizeof($Indicadoresid_aux) ; $k++) {
+                                $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID_aux[$j] AND i.Id_indicador = $Indicadoresid_aux[$k]";
+                                $SubIndicadores_Prueba = $conexion->readConsulta($sql);
+                                //echo $sql;
+                                while($row=mysqli_fetch_object($SubIndicadores_Prueba)){
+                                    $Id_sub_indi=$row->Id_sub_indi;
+                                    $Nombre_sub_indi=$row->Nombre_sub_indi;
+                                    $Nombre_sub_alterno=$row->Nombre_sub_alterno;
+                                    $Indicador_Encuesta=$row->Indicador_Encuesta;
+                                    $Id_Indicador=$row->Id_Indicador;
+                                    $Nombre_sub_alternoArr[] = $Nombre_sub_alterno;
+                                }
+                                echo "--------ETHOS---$arrIndicadoresEthosID_aux[$j]----------------<br>";
+                                for ($l=0; $l < sizeof($Nombre_sub_alternoArr) ; $l++) { 
+                                    echo $Nombre_sub_alternoArr[$l],"<br>";
+                                    if($row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si" || $row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si_"){
+                                        $contIndi=$contIndi+1;
+                                    }
+                                }
+                                $valor = 100/sizeof($Nombre_sub_alternoArr);
+                                $aux = $contIndi*$valor;
+                                echo $contIndi,"<br>";
+                                echo "Porcentaje: $aux","<br>";
+                                $arrayAux[] = $aux;
+                                $Nombre_sub_alternoArr = array_diff($Nombre_sub_alternoArr,$Nombre_sub_alternoArr);
+                                $contIndi=0;
+                            }
+                            $arrayGeneral[] = $arrayAux;
+                            $arrayAux = array_diff($arrayAux,$arrayAux);
+                            $Indicadoresid_aux = array_diff($Indicadoresid_aux,$Indicadoresid_aux);
+                        }
+                        $array = $row1[$numero]["attributes"]["_2_ruc"];
+                        echo $array,"<br>";
+                        echo $row1[$numero]["attributes"]["_1_aplica_la_responsabilidad_so"],"<br>";
+                        for ($i=0; $i < sizeof($arrayGeneral); $i++) { 
+                            echo $arrayGeneral[$i][0],"<br>";
+                        }
+                    ?>
                     <?php 
                     
 
