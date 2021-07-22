@@ -86,10 +86,17 @@ https://templatemo.com/tm-516-known
                     
                </div>
 
+               
+               
+
           </div>
+          
      </section>
+
+     
       <!-- Resultado Encuesta -->
      <section>
+     
          <?php 
             $cadena = file_get_contents("https://services9.arcgis.com/2YA05qh4jhRDhuXH/arcgis/rest/services/survey123_828a14a2074847899a525923a82b5b5e/FeatureServer/0/query?outFields=*&where=1%3D1&f=json");
             $json = json_decode($cadena,true);
@@ -97,7 +104,7 @@ https://templatemo.com/tm-516-known
             $numero = 0;
             
             for ($i=0; $i < sizeof($row1); $i++) {
-                if(1790864316001 == $row1[$i]["attributes"]["_2_ruc"]){
+                if($NomRuc == $row1[$i]["attributes"]["_2_ruc"]){
                     $numero = $i;
                     break;
                 }
@@ -210,6 +217,8 @@ https://templatemo.com/tm-516-known
                               </div>
                          </div>
                     </div>
+
+                    
                     <div class="col-md-4 col-sm-6">
                          <div class = "footer_img">
                               <img src="./images/UTPL1.png" alt="" style="width: 274.5px; height:  106.5px">
