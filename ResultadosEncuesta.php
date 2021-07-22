@@ -112,6 +112,27 @@ https://templatemo.com/tm-516-known
                               </div>
                          </div>
                     </div>
+                    <div class="col-md-offset-1 col-md-4 col-sm-12">
+                        
+                              <form action='#' method="post">
+                                   <h2>Buscar RUC</h2>
+                                   <input type="text" name="txtRuc" class="form-control" placeholder="RUC de la empresa:" required="">  
+                                   <div class='div-table-cell' style='width: 4%;'></div>                                                           
+                                   <input type='submit' class='submit-btn form-control' style= background-color:#9dc15b value='Buscar' name='BuscarRuc'>
+                                   <div class='div-table-cell' style='width: 4%;'></div>
+                              </form>
+                              
+                         
+                    </div>
+                    <?php 
+     if(isset($_POST["BuscarRuc"])){
+
+		$NomRuc = $_POST["txtRuc"];
+
+		echo $NomRuc;
+		
+	}
+?>
         
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">

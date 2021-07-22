@@ -86,8 +86,14 @@ https://templatemo.com/tm-516-known
                     
                </div>
 
+               
+               
+
           </div>
+          
      </section>
+
+     
       <!-- Resultado Encuesta -->
       <script>
           function enviar(){
@@ -105,6 +111,87 @@ https://templatemo.com/tm-516-known
             </form>
         </div>
       </section>
+     <section>
+     
+         <?php 
+            $cadena = file_get_contents("https://services9.arcgis.com/2YA05qh4jhRDhuXH/arcgis/rest/services/survey123_828a14a2074847899a525923a82b5b5e/FeatureServer/0/query?outFields=*&where=1%3D1&f=json");
+            $json = json_decode($cadena,true);
+            $row1 =$json["features"];
+            $numero = 0;
+            
+            for ($i=0; $i < sizeof($row1); $i++) {
+                if($NomRuc == $row1[$i]["attributes"]["_2_ruc"]){
+                    $numero = $i;
+                    break;
+                }
+
+                //echo $row[$i]["attributes"]["objectid"],"<br>";
+            }
+            $Indicadores = $conexion->readConsulta("SELECT * FROM Indicadores");
+            $IndicadoresEthos = $conexion->readConsulta("SELECT * FROM Indicadores_Ethos");
+            $SubIndicadores = $conexion->readConsulta("SELECT * FROM Sub_Indicadores");
+            $contIndi = 0;
+            $arrayGeneral = [];
+            $arrayAux = [];
+            while($row=mysqli_fetch_object($IndicadoresEthos)){
+                $Id_Indi_Ethos=$row->Id_indi_Ethos;
+                $Nombre_ind_Ethos=$row->Nombre_Indi_Ethos;                             
+                $arrIndicadoresEthosID[] = $Id_Indi_Ethos;
+            }
+            
+            for ($j=0; $j < sizeof($arrIndicadoresEthosID)-1 ; $j++) { 
+                $SubIndi_ethos = $conexion->readConsulta("SELECT * FROM Indicadores WHERE Id_indi_Ethos = $arrIndicadoresEthosID[$j]");
+                while($row=mysqli_fetch_object($SubIndi_ethos)){
+                    $Id_ind=$row->Id_indicador;
+                    $Nombre_ind=$row->Nombre_Indicador;
+                    $Id_ind_ethos=$row->Id_indi_Ethos;
+                    $Indicadoresid[] = $Id_ind;
+                    //echo $Nombre_ind;
+                }
+                echo sizeof($Indicadoresid),"<br>";
+                echo $arrIndicadoresEthosID[0],"--<br>";
+                echo $Indicadoresid[0],"--<br>";
+                $Nombre_sub_alternoArr = [];
+                for ($k=0; $k < sizeof($Indicadoresid) ; $k++) {
+                    $sql = "SELECT s.* FROM Indicadores i,Indicadores_Ethos e, Sub_Indicadores s WHERE i.Id_indi_Ethos = e.Id_indi_Ethos AND s.Id_Indicador = i.Id_indicador AND e.Id_indi_Ethos = $arrIndicadoresEthosID[$j] AND i.Id_indicador = $Indicadoresid[$k]";
+                    $SubIndicadores_Prueba = $conexion->readConsulta($sql);
+                    //echo $sql;
+                    while($row=mysqli_fetch_object($SubIndicadores_Prueba)){
+                        $Id_sub_indi=$row->Id_sub_indi;
+                        $Nombre_sub_indi=$row->Nombre_sub_indi;
+                        $Nombre_sub_alterno=$row->Nombre_sub_alterno;
+                        $Indicador_Encuesta=$row->Indicador_Encuesta;
+                        $Id_Indicador=$row->Id_Indicador;
+                        $Nombre_sub_alternoArr[] = $Nombre_sub_alterno;
+                    }
+                    echo "--------ETHOS---$arrIndicadoresEthosID[$j]----------------<br>";
+                    for ($l=0; $l < sizeof($Nombre_sub_alternoArr) ; $l++) { 
+                        echo $Nombre_sub_alternoArr[$l],"<br>";
+                        if($row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si" || $row1[$numero]["attributes"][$Nombre_sub_alternoArr[$l]] =="si_"){
+                            $contIndi=$contIndi+1;
+                        }
+                    }
+                    $valor = 100/sizeof($Nombre_sub_alternoArr);
+                    $aux = $contIndi*$valor;
+                    echo $contIndi,"<br>";
+                    echo "Porcentaje: $aux","<br>";
+                    $arrayAux[] = $aux;
+                    $Nombre_sub_alternoArr = array_diff($Nombre_sub_alternoArr,$Nombre_sub_alternoArr);
+                    $contIndi=0;
+                }
+                $arrayGeneral[] = $arrayAux;
+                $arrayAux = array_diff($arrayAux,$arrayAux);
+                $Indicadoresid = array_diff($Indicadoresid,$Indicadoresid);
+            }
+            $array = $row1[$numero]["attributes"]["_2_ruc"];
+            echo $array,"<br>";
+            echo $row1[$numero]["attributes"]["_1_aplica_la_responsabilidad_so"],"<br>";
+            for ($i=0; $i < sizeof($arrayGeneral); $i++) { 
+                echo $arrayGeneral[$i][0],"<br>";
+            }
+        ?>
+
+     </section>
 
      <!-- FOOTER -->
      <footer id="footer">
@@ -153,6 +240,8 @@ https://templatemo.com/tm-516-known
                               </div>
                          </div>
                     </div>
+
+                    
                     <div class="col-md-4 col-sm-6">
                          <div class = "footer_img">
                               <img src="./images/UTPL1.png" alt="" style="width: 274.5px; height:  106.5px">
