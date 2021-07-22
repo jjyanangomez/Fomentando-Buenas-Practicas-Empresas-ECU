@@ -290,9 +290,53 @@ https://templatemo.com/tm-516-known
                         $array = $row1[$numero]["attributes"]["_2_ruc"];
                         echo $array,"<br>";
                         echo $row1[$numero]["attributes"]["_1_aplica_la_responsabilidad_so"],"<br>";
-                        for ($i=0; $i < sizeof($arrayGeneral); $i++) { 
-                            echo $arrayGeneral[$i][0],"<br>";
+                        $dataIndicador1= [];
+                        $dataIndicador2= [];
+                        $dataIndicador3= [];
+                        $dataIndicador4= [];
+                        $dataIndicador5= [];
+                        $dataIndicador6= [];
+                        $dataIndicador7= [];
+                        for ($i=0; $i < sizeof($arrayGeneral[0]); $i++) { 
+                            //echo "//";
+                            //echo $arrayGeneral[0][$i],"<br>";
+                            $dataIndicador1[] = $arrayGeneral[0][$i];
+
                         }
+                        for ($i=0; $i < sizeof($arrayGeneral[1]); $i++) { 
+                            //echo "//";
+                            //echo $arrayGeneral[0][$i],"<br>";
+                            $dataIndicador2[] = $arrayGeneral[1][$i];
+
+                        }
+                        for ($i=0; $i < sizeof($arrayGeneral[2]); $i++) { 
+                            //echo "//";
+                            //echo $arrayGeneral[0][$i],"<br>";
+                            $dataIndicador3[] = $arrayGeneral[2][$i];
+
+                        }
+                        for ($i=0; $i < sizeof($arrayGeneral[3]); $i++) { 
+                            //echo "//";
+                            //echo $arrayGeneral[0][$i],"<br>";
+                            $dataIndicador4[] = $arrayGeneral[3][$i];
+
+                        }
+                        for ($i=0; $i < sizeof($arrayGeneral[4]); $i++) { 
+                           
+                            $dataIndicador5[] = $arrayGeneral[4][$i];
+
+                        }
+                        for ($i=0; $i < sizeof($arrayGeneral[5]); $i++) { 
+                           
+                            $dataIndicador6[] = $arrayGeneral[5][$i];
+
+                        }
+                        for ($i=0; $i < sizeof($arrayGeneral[6]); $i++) { 
+                           
+                            $dataIndicador7[] = $arrayGeneral[6][$i];
+
+                        }
+
                     ?>
                     <?php 
                     
@@ -305,6 +349,7 @@ https://templatemo.com/tm-516-known
                     $labelIndicador6 = [];
                     $labelIndicador7 = [];
                     $labelIndicador8 = [];
+                    
                    
                      for($i=0; $i < count($Indicadoresid); $i++){
                         
@@ -351,6 +396,14 @@ https://templatemo.com/tm-516-known
                          var label6=<?php echo json_encode($labelIndicador6);?>;
                          var label7=<?php echo json_encode($labelIndicador7);?>;
                          var label8=<?php echo json_encode($labelIndicador8);?>;
+                         var datas1=<?php echo json_encode($dataIndicador1);?>;
+                         var datas2=<?php echo json_encode($dataIndicador2);?>;
+                         var datas3=<?php echo json_encode($dataIndicador3);?>;
+                         var datas4=<?php echo json_encode($dataIndicador4);?>;
+                         var datas5=<?php echo json_encode($dataIndicador5);?>;
+                         var datas6=<?php echo json_encode($dataIndicador6);?>;
+                         var datas7=<?php echo json_encode($dataIndicador7);?>;
+                         
 
 
                          var ctx = document.getElementById('myChart').getContext('2d');
@@ -373,7 +426,7 @@ https://templatemo.com/tm-516-known
             label: 
             "<?php echo $arrIndicadoresEthos[0]; ?>"
             ,
-            data: [62, 80, 85, 93],
+            data: datas1,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -418,7 +471,7 @@ var myChart2 = new Chart(ctx2, {
             label: 
             "<?php echo $arrIndicadoresEthos[1]; ?>"
             ,
-            data: [62, 80, 85, 93],
+            data: datas2,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -462,7 +515,7 @@ var myChart3 = new Chart(ctx3, {
             label: 
             "<?php echo $arrIndicadoresEthos[2]; ?>"
             ,
-            data: [62, 80, 85, 93],
+            data: datas3,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -506,7 +559,7 @@ var myChart4 = new Chart(ctx4, {
             label: 
             "<?php echo $arrIndicadoresEthos[3]; ?>"
             ,
-            data: [62, 80, 85, 93],
+            data: data4,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -550,7 +603,7 @@ var myChart5 = new Chart(ctx5, {
             label: 
             "<?php echo $arrIndicadoresEthos[4]; ?>"
             ,
-            data: [62, 80, 85, 93],
+            data: data5,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -594,7 +647,7 @@ var myChart6 = new Chart(ctx6, {
             label: 
             "<?php echo $arrIndicadoresEthos[5]; ?>"
             ,
-            data: [62, 80, 85, 93],
+            data: data6,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -638,7 +691,7 @@ var myChart7 = new Chart(ctx7, {
             label: 
             "<?php echo $arrIndicadoresEthos[6]; ?>"
             ,
-            data: [62, 80, 85, 93],
+            data: data7,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
