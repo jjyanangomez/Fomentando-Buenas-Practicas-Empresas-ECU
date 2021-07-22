@@ -629,7 +629,7 @@ var myChart8 = new Chart(ctx8, {
          
                     <?php 
                     $data = $obtenerJson -> leerJson();
-                    $datos = print_r($data, true);                  
+                    //$datos = print_r($data, true);                  
                     $obtenerJson -> ObtenerAtributos($data);
                     //$obtenerJson->getObjectid() . "<br>";
                     
@@ -644,7 +644,7 @@ var myChart8 = new Chart(ctx8, {
 
                     <script>
 
-                        var arreglo=<?php echo json_encode($datos);?>; 
+                        var arreglo=<?php echo json_encode($data);?>; 
                        
 
                     console.log(arreglo);
